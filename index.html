@@ -74,31 +74,35 @@
     </header>
 
     <section id="profile">
-        <div class="scene">
-            <div class="cube">
-                <div class="cube-face front"></div>
-                <div class="cube-face back"></div>
-                <div class="cube-face right"></div>
-                <div class="cube-face left"></div>
-                <div class="cube-face top"></div>
-                <div class="cube-face bottom"></div>
-            </div>
+    <div class="scene">
+        <div class="cube">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
         </div>
-        <div class="profile-content pixel-border">
-            <div class="avatar">
-                <img src="/static/img/image.png" alt="My Logo">
-            </div>
-            <h2>MAO VISAL</h2>
-            <h3>STUDENT COMPUTER SCIENCE</h3>
-            <p>
-                Hi! I'm <strong>Mao Visal</strong>, a passionate front-end developer
-                specializing in translating design concepts into seamless and
-                interactive web experiences.
-            </p>
-            <a href="#projects" class="btn">View Inventory</a>
-        </div>
-    </section>
+    </div>
 
+    <div class="profile-content pixel-border">
+        <div class="avatar">
+            <img src="/static/img/image.png" alt="Mao Visal Logo">
+        </div>
+        
+        <h2>MAO VISAL</h2>
+        <h3>COMPUTER SCIENCE STUDENT</h3>
+
+        <p>
+            Hi! I'm <strong>Mao Visal</strong>, a passionate back-end developer and 
+            cybersecurity enthusiast. I enjoy turning ideas and designs into secure, 
+            efficient, and interactive web applications.
+        </p>
+
+
+        <a href="#projects" class="btn">View Inventory</a>
+    </div>
+</section>
     <section id="projects">
         <div class="container">
             <h2 class="section-title" style="color: #8d6743;">PROJECTS</h2>
@@ -141,68 +145,95 @@
         </div>
     </section>
 
-    <section id="Skills">
-        <div class="container">
+    <section id="Skills"> <div class="container">
             <h2 class="section-title" style="color: #696965;">SKILLS</h2>
-            <div class="d-flex flex-wrap justify-content-center">
-                <a href="#" class="btn-skill">C</a>
-                <a href="#" class="btn-skill">C++</a>
-                <a href="#" class="btn-skill">Java</a>
-                <a href="#" class="btn-skill">C#</a>
-                <a href="#" class="btn-skill">Python</a>
-                <a href="#" class="btn-skill">HTML</a>
-                <a href="#" class="btn-skill">CSS</a>
+            
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+                
+                <div class="btn-skill" style="--w: 60%">
+                    <span class="skill-name">C</span>
+                    <span class="skill-percent">60%</span>
+                </div>
+
+                <div class="btn-skill" style="--w: 65%">
+                    <span class="skill-name">C++</span>
+                    <span class="skill-percent">65%</span>
+                </div>
+
+                <div class="btn-skill" style="--w: 60%">
+                    <span class="skill-name">Java</span>
+                    <span class="skill-percent">60%</span>
+                </div>
+
+                <div class="btn-skill" style="--w: 60%">
+                    <span class="skill-name">C#</span>
+                    <span class="skill-percent">60%</span>
+                </div>
+
+                <div class="btn-skill" style="--w: 82%">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-percent">82%</span>
+                </div>
+
+                <div class="btn-skill" style="--w: 90%">
+                    <span class="skill-name">HTML</span>
+                    <span class="skill-percent">90%</span>
+                </div>
+
+                <div class="btn-skill" style="--w: 60%">
+                    <span class="skill-name">CSS</span>
+                    <span class="skill-percent">60%</span>
+                </div>
+
             </div>
         </div>
     </section>
+    <section id="experience">
+    <div class="container">
+        <h2 class="section-title text-center mb-3" style="color: #fce803;">My Journey</h2>
 
-    <!-- <section id="experience">
-        <div class="container text-center">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-tex d-flex justify-content-center">
-                <p class="col-md-6">
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-8 text-center">
+                <p style="color: #fff; font-size: 1.2rem; text-shadow: 2px 2px 0 #000;">
                     No professional experience yet, but actively building projects, learning new skills,
                     and eager for opportunities to work and grow.
                 </p>
-
             </div>
         </div>
-    </section> -->
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title text-center mb-5" style="color: #fce803;">My Journey</h2>
 
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                
+                <div class="timeline-wrapper">
                     
-                    <div class="timeline-wrapper">
-                        
-                        <div class="timeline-item">
-                            <span class="timeline-badge">Present</span>
-                            <h4 class="h5 fw-bold mt-2">Started Web Development</h4>
-                            <p>
-                                Began learning the fundamentals of HTML, CSS, and Bootstrap to build responsive user interfaces.
-                            </p>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-badge">2024</span>
-                            <h4 class="h5 fw-bold mt-2">Deepening Python Knowledge</h4>
-                            <p>
-                                Mastered automation scripts and GUI development using libraries like Selenium and Tkinter.
-                            </p>
-                        </div>
-                        <div class="timeline-item">
-                            <span class="timeline-badge">2023</span>
-                            <h4 class="h5 fw-bold mt-2">Building Full-Stack Projects</h4>
-                            <p>
-                                Developing a comprehensive management system using Python (Flask) and SQL. Focusing on backend logic and database architecture.
-                            </p>
-                        </div>
+                    <div class="timeline-item">
+                        <span class="timeline-badge">Present</span>
+                        <h4 class="h5 fw-bold mt-2">Started Web Development</h4>
+                        <p>
+                            Began learning the fundamentals of HTML, CSS, and Bootstrap to build responsive user interfaces.
+                        </p>
+                    </div>
 
+                    <div class="timeline-item">
+                        <span class="timeline-badge">2024</span>
+                        <h4 class="h5 fw-bold mt-2">Deepening Python Knowledge</h4>
+                        <p>
+                            Mastered automation scripts and GUI development using libraries like Selenium and Tkinter.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-badge">2023</span>
+                        <h4 class="h5 fw-bold mt-2">Building Full-Stack Projects</h4>
+                        <p>
+                            Developing a comprehensive management system using Python (Flask) and SQL. Focusing on backend logic and database architecture.
+                        </p>
+                    </div>
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </section>
 
     <section id="connect" class="py-5" >
@@ -223,7 +254,7 @@
                     <i class="fab fa-github"></i>
                     GitHub
                 </a>
-                <a href="#" class="pixel-btn-social li" target="_blank">
+                <a href="https://www.linkedin.com/in/mao-visal-22586536a/" class="pixel-btn-social li" target="_blank">
                     <i class="fab fa-linkedin"></i>
                     LinkedIn
                 </a>
