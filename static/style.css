@@ -494,71 +494,86 @@ img { max-width: 100%; display: block; }
 
 
 } */
+/* =========================================
+   1. SHARED & MOBILE STYLES (Default)
+   ========================================= */
+
 .timeline-wrapper {
     position: relative;
-    padding: 2rem 0;
+    padding: 3rem 0;
     margin: 2rem 0;
+    overflow-x: hidden;
 }
 
+/* The Vertical Backbone */
 .timeline-wrapper::before {
     content: '';
     position: absolute;
     top: 0;
     bottom: 0;
     width: 4px;
-    background: #fce803; 
-    left: 20px; 
-    box-shadow: 2px 0 0 rgba(0,0,0,0.5); 
+    background: #fce803;
+    left: 30px; /* Moved slightly right for better mobile view */
+    box-shadow: 2px 0 0 rgba(0,0,0,0.5);
     z-index: 1;
 }
 
 .timeline-item {
     position: relative;
     margin-bottom: 4rem;
-    padding-left: 60px; 
+    /* MOBILE GAP: Large enough so badge doesn't hit text */
+    padding-left: 100px; 
 }
 
+/* The Connector Arm (Mobile) */
 .timeline-item::before {
     content: '';
     position: absolute;
-    top: 24px; 
-    left: 22px;
-    width: 30px; 
+    top: 22px; 
+    left: 30px; /* Starts at line */
+    width: 70px; /* Reaches to text box */
     height: 4px;
     background: #fce803;
     z-index: 1;
 }
 
+/* The Badge (Pill Shape) */
 .timeline-badge {
     position: absolute;
     top: 0;
-    left: 0;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%; 
+    left: 30px; /* Centered on the mobile line */
+    transform: translateX(-50%);
+    
+    width: auto;
+    min-width: 60px;
+    padding: 8px 20px; /* More breathing room */
+    border-radius: 50px;
+    white-space: nowrap;
+    
     background: #fce803;
     color: #451919;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 3px solid #fff; 
+    border: 3px solid #fff;
     box-shadow: 3px 3px 0 #000;
-    z-index: 2;
-    font-family: 'VT323', monospace; 
+    z-index: 10;
+    font-family: 'VT323', monospace;
 }
 
+/* Text Box Styling */
 .timeline-item h4 {
-    margin-top: 0;
-    margin-bottom: 0;
-    background: #fce803; 
+    margin: 0;
+    background: #fce803;
     color: #451919;
     padding: 10px 15px;
     border: 2px solid #fce803;
-    display: inline-block; 
+    display: inline-block;
     box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
     font-weight: bold;
     position: relative;
+    z-index: 2;
 }
 
 .timeline-item p {
@@ -566,9 +581,10 @@ img { max-width: 100%; display: block; }
     background: rgba(0, 0, 0, 0.4);
     color: #fff !important;
     padding: 15px;
-    border: 2px solid #fce803; 
+    border: 2px solid #fce803;
     box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
 }
+
 
 /* --- CONNECT  --- */
 #connect {
@@ -732,48 +748,53 @@ footer p {
 
 
 @media (min-width: 768px) {
+    
     .timeline-wrapper::before {
         left: 50%;
         transform: translateX(-50%);
     }
+
     .timeline-item {
         width: 50%;
-        padding-left: 0;
-        padding-right: 0;
+        margin-bottom: 5rem;
     }
 
     .timeline-item:nth-child(odd) {
         left: 0;
-        text-align: right; 
-        padding-right: 60px; 
+        text-align: right;
+        padding-left: 0;
+        padding-right: 140px; 
     }
 
     .timeline-item:nth-child(odd)::before {
-        left: auto; 
-        right: 0; 
-        width: 60px; 
+        left: auto;
+        right: 0;
+        width: 140px; 
     }
-
     .timeline-item:nth-child(odd) .timeline-badge {
         left: auto;
-        right: -24px; 
+        right: 0;
+        transform: translateX(50%);
     }
 
     .timeline-item:nth-child(even) {
         left: 50%;
-        text-align: left; 
-        padding-left: 60px; 
+        text-align: left;
+        padding-right: 0;
+        padding-left: 140px; 
     }
 
     .timeline-item:nth-child(even)::before {
-        left: 0; 
-        width: 60px;
+        left: 0;
+        width: 140px; 
     }
 
     .timeline-item:nth-child(even) .timeline-badge {
-        left: -24px; 
+        left: 0;
+        transform: translateX(-50%);
     }
 }
+
 /* .pixel-btn-social,
 .pixel-btn-submit,
 .pixel-input,
