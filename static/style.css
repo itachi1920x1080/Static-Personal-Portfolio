@@ -494,9 +494,6 @@ img { max-width: 100%; display: block; }
 
 
 } */
-/* =========================================
-   1. SHARED & MOBILE STYLES (Default)
-   ========================================= */
 
 .timeline-wrapper {
     position: relative;
@@ -505,7 +502,6 @@ img { max-width: 100%; display: block; }
     overflow-x: hidden;
 }
 
-/* The Vertical Backbone */
 .timeline-wrapper::before {
     content: '';
     position: absolute;
@@ -513,7 +509,7 @@ img { max-width: 100%; display: block; }
     bottom: 0;
     width: 4px;
     background: #fce803;
-    left: 30px; /* Moved slightly right for better mobile view */
+    left: 30px; 
     box-shadow: 2px 0 0 rgba(0,0,0,0.5);
     z-index: 1;
 }
@@ -521,32 +517,29 @@ img { max-width: 100%; display: block; }
 .timeline-item {
     position: relative;
     margin-bottom: 4rem;
-    /* MOBILE GAP: Large enough so badge doesn't hit text */
     padding-left: 100px; 
 }
 
-/* The Connector Arm (Mobile) */
 .timeline-item::before {
     content: '';
     position: absolute;
     top: 22px; 
-    left: 30px; /* Starts at line */
-    width: 70px; /* Reaches to text box */
+    left: 30px; 
+    width: 70px; 
     height: 4px;
     background: #fce803;
     z-index: 1;
 }
 
-/* The Badge (Pill Shape) */
 .timeline-badge {
     position: absolute;
     top: 0;
-    left: 30px; /* Centered on the mobile line */
+    left: 30px;
     transform: translateX(-50%);
     
     width: auto;
     min-width: 60px;
-    padding: 8px 20px; /* More breathing room */
+    padding: 8px 20px;
     border-radius: 50px;
     white-space: nowrap;
     
@@ -562,7 +555,6 @@ img { max-width: 100%; display: block; }
     font-family: 'VT323', monospace;
 }
 
-/* Text Box Styling */
 .timeline-item h4 {
     margin: 0;
     background: #fce803;
