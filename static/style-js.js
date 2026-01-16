@@ -38,3 +38,28 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // 1. Select all timeline items
+        const items = document.querySelectorAll('.timeline-item');
+
+        // 2. Set up the Intersection Observer (The "Watcher")
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // If the item enters the screen
+                if (entry.isIntersecting) {
+                    // Add the class 'visible' to make it appear
+                    entry.target.classList.add('visible');
+                    // Stop watching it so it doesn't animate again
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the item is visible
+        });
+
+        // 3. Start watching every timeline item
+        items.forEach(item => {
+            observer.observe(item);
+        });
+    });

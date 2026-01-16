@@ -576,6 +576,16 @@ img { max-width: 100%; display: block; }
     border: 2px solid #fce803;
     box-shadow: 4px 4px 0 rgba(0,0,0,0.5);
 }
+.timeline-item { 
+    position: relative;
+    margin-bottom: 4rem;
+    padding-left: 100px;
+} 
+
+.timeline-item.visible {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
 
 
 /* --- CONNECT  --- */
