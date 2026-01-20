@@ -63,3 +63,108 @@ document.addEventListener("DOMContentLoaded", () => {
             observer.observe(item);
         });
     });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+            const skillData = {
+                frontend: {
+                    title: "Front-End",
+                    icon: "fa-solid fa-code",
+                    skills: [
+                        { name: "HTML", level: "90%" },
+                        { name: "CSS", level: "60%" },
+                        { name: "Qt Designer", level: "85%" },
+                        { name: "PyQt", level: "60%" },
+                        { name: "Tkinter", level: "60%" }
+                    ]
+                },
+                backend: {
+                    title: "Back-End",
+                    icon: "fa-solid fa-server",
+                    skills: [
+                        { name: "Python", level: "82%" },
+                        { name: "Django", level: "60%" },
+                        { name: "MySQL", level: "85%" }
+                    ]
+                },
+                tools: {
+                    title: "Tools",
+                    icon: "fa-solid fa-screwdriver-wrench",
+                    skills: [
+                        { name: "Postman", level: "90%" },
+                        { name: "GitHub", level: "80%" },
+                        { name: "VS Code", level: "85%" },
+                        { name: "PyCharm", level: "75%" }
+                    ]
+                },
+                softskills: {
+                    title: "Programming & Others",
+                    icon: "fa-solid fa-user-group",
+                    skills: [
+                        { name: "C", level: "60%" },
+                        { name: "C++", level: "65%" },
+                        { name: "Problem Solving", level: "85%" },
+                        { name: "Teamwork", level: "90%" }
+                    ]
+                }
+            };
+
+            const tabsContainer = document.getElementById('skills-tabs');
+            const contentContainer = document.getElementById('skills-content');
+
+            if (tabsContainer && contentContainer) {
+                function renderContent(categoryKey) {
+                    const data = skillData[categoryKey];
+                    
+                    // 1. Title
+                    contentContainer.innerHTML = `<h3 class="category-title"><i class="${data.icon}"></i> ${data.title}</h3>`;
+
+                    // 2. Bars
+                    data.skills.forEach(skill => {
+                        const barHTML = `
+                            <div class="skill-bar-wrapper">
+                                <div class="skill-info">
+                                    <span>${skill.name}</span>
+                                    <span>${skill.level}</span>
+                                </div>
+                                <div class="progress-line">
+                                    <span data-width="${skill.level}"></span>
+                                </div>
+                            </div>
+                        `;
+                        contentContainer.innerHTML += barHTML;
+                    });
+
+                    // 3. Animation
+                    setTimeout(() => {
+                        const bars = contentContainer.querySelectorAll('.progress-line span');
+                        bars.forEach(bar => {
+                            bar.style.width = bar.getAttribute('data-width');
+                        });
+                    }, 50);
+                }
+
+                let isFirst = true;
+                for (const key in skillData) {
+                    const data = skillData[key];
+                    const tabBtn = document.createElement('div');
+                    tabBtn.className = 'tab-card';
+                    if (isFirst) tabBtn.classList.add('active');
+
+                    tabBtn.innerHTML = `<i class="${data.icon}"></i> <span>${data.title}</span>`;
+
+                    tabBtn.addEventListener('click', () => {
+                        document.querySelectorAll('.tab-card').forEach(t => t.classList.remove('active'));
+                        tabBtn.classList.add('active');
+                        renderContent(key);
+                    });
+
+                    tabsContainer.appendChild(tabBtn);
+
+                    if (isFirst) {
+                        renderContent(key);
+                        isFirst = false;
+                    }
+                }
+            }
+        });
