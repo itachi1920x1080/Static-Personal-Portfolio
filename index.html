@@ -124,38 +124,162 @@
             <div class="row g-4 justify-content-center">
                 
                 <div class="col-12 col-md-4">
-                    <div class="card">
+                    <div class="card" data-bs-toggle="modal" data-bs-target="#pythonModal" style="cursor: pointer;">
                         <div class="card-img-placeholder">
                             <img src="/static/img/image copy 2.png" alt="Python Project">
                         </div>
                         <h3>Python Project</h3>
                         <p>A decentralized ledger built from scratch using Python.</p>
-                        <a href="https://github.com/itachi1920x1080" class="btn w-100 mt-auto">Source Code</a>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <div class="card">
+                    <div class="card" data-bs-toggle="modal" data-bs-target="#webdevModal" style="cursor: pointer;">
                         <div class="card-img-placeholder">
-                            <img src="/static/img/image copy 3.png " alt="Web Dev">
+                            <div class="iframe-thumbnail-container">
+                                <iframe src="https://beautiful-reflection-production.up.railway.app/" scrolling="no" tabindex="-1"></iframe>
+                            </div>
                         </div>
                         <h3>Web Development</h3>
                         <p>A personal portfolio website showcasing my projects and skills.</p>
-                        <a href="https://github.com/itachi1920x1080" class="btn w-100 mt-auto">Source Code</a>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <div class="card">
+                    <div class="card" data-bs-toggle="modal" data-bs-target="#gameModal" style="cursor: pointer;">
                         <div class="card-img-placeholder">
                             <img src="/static/img/image copy 4.png" alt="Game Dev">
                         </div>
                         <h3>Game Development</h3>
                         <p>A Basic game using Python.</p>
-                        <a href="https://github.com/itachi1920x1080"class="btn w-100 mt-auto">Source Code</a>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                    </div>
+                </div>
+                 <div class="col-12 col-md-4">
+                    <div class="card" data-bs-toggle="modal" data-bs-target="#botModal" style="cursor: pointer;">
+                        <div class="card-img-placeholder">
+                            <img src="/static/img/image copy.png" alt="Telegram Bot">
+                        </div>
+                        <h3>Telegram Bot</h3>
+                        <p> Telegram bot.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
                     </div>
                 </div>
 
+                <div class="col-12 col-md-4">
+                    <div class="card" data-bs-toggle="modal" data-bs-target="#mediaHubModal" style="cursor: pointer;">
+                        <div class="card-img-placeholder" style="background-color: transparent;">
+                            <div class="iframe-thumbnail-container">
+                                <iframe src="https://media-downloader-hub-bot.vercel.app" scrolling="no" tabindex="-1"></iframe>
+                            </div>
+                        </div>
+                        <h3>Media Downloader Hub</h3>
+                        <p>A web interface for downloading media via my Telegram bot.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modals -->
+            <div class="modal fade" id="pythonModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content text-dark" style="background-color: var(--mc-gui); border: 4px solid var(--mc-dark); border-radius: 0;">
+                  <div class="modal-header border-dark" style="border-bottom: 2px solid var(--mc-dark);">
+                    <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: var(--mc-dark);">Python Project</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <img src="/static/img/image copy 2.png" alt="Python Project" class="img-fluid mb-3 border border-dark" style="max-height: 60vh;">
+                    <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: var(--mc-dark);">A decentralized ledger built from scratch using Python.</p>
+                  </div>
+                  <div class="modal-footer border-dark justify-content-center" style="border-top: 2px solid var(--mc-dark);">
+                    <a href="https://github.com/itachi1920x1080" target="_blank" class="btn">Source Code</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="webdevModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content text-dark" style="background-color: var(--mc-gui); border: 4px solid var(--mc-dark); border-radius: 0;">
+                  <div class="modal-header border-dark" style="border-bottom: 2px solid var(--mc-dark);">
+                    <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: var(--mc-dark);">Web Development</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="ratio ratio-16x9 mb-3 border border-dark">
+                      <iframe src="https://beautiful-reflection-production.up.railway.app/" title="Ecommerce Project" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: var(--mc-dark);">A personal portfolio website showcasing my projects and skills.</p>
+                  </div>
+                  <div class="modal-footer border-dark justify-content-center flex-wrap" style="border-top: 2px solid var(--mc-dark);">
+                    <a href="https://beautiful-reflection-production.up.railway.app/" target="_blank" class="btn m-1">Frontend Demo</a>
+                    <a href="https://ecommerce-production-3bc1.up.railway.app/" target="_blank" class="btn m-1">Backend Demo</a>
+                    <a href="https://github.com/itachi1920x1080" target="_blank" class="btn m-1">Source Code</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="gameModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content text-dark" style="background-color: var(--mc-gui); border: 4px solid var(--mc-dark); border-radius: 0;">
+                  <div class="modal-header border-dark" style="border-bottom: 2px solid var(--mc-dark);">
+                    <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: var(--mc-dark);">Game Development</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <img src="/static/img/image copy 4.png" alt="Game Dev" class="img-fluid mb-3 border border-dark" style="max-height: 60vh;">
+                    <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: var(--mc-dark);">A Basic game using Python.</p>
+                  </div>
+                  <div class="modal-footer border-dark justify-content-center" style="border-top: 2px solid var(--mc-dark);">
+                    <a href="https://github.com/itachi1920x1080" target="_blank" class="btn">Source Code</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="botModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content text-dark" style="background-color: var(--mc-gui); border: 4px solid var(--mc-dark); border-radius: 0;">
+                  <div class="modal-header border-dark" style="border-bottom: 2px solid var(--mc-dark);">
+                    <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: var(--mc-dark);">Telegram Bot</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <img src="/static/img/image copy 4.png" alt="Telegram Bot" class="img-fluid mb-3 border border-dark" style="max-height: 60vh;">
+                    <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: var(--mc-dark);">Telegram bot projects.</p>
+                  </div>
+                  <div class="modal-footer border-dark justify-content-center flex-wrap" style="border-top: 2px solid var(--mc-dark);">
+                    <a href="https://t.me/my_media_hub_bot" target="_blank" class="btn m-1">MediaDownloaderHub_Bot</a>
+                    <a href="https://t.me/rupp_shop_bot" target="_blank" class="btn m-1">RuppShop_Bot</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="mediaHubModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content text-dark" style="background-color: var(--mc-gui); border: 4px solid var(--mc-dark); border-radius: 0;">
+                  <div class="modal-header border-dark" style="border-bottom: 2px solid var(--mc-dark);">
+                    <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: var(--mc-dark);">Media Downloader Hub</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="ratio ratio-16x9 mb-3 border border-dark">
+                      <iframe src="https://mediadownloaderhub.pages.dev/" title="Media Downloader Hub" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: var(--mc-dark);">A dedicated web interface for downloading media via my Telegram bot.</p>
+                  </div>
+                  <div class="modal-footer border-dark justify-content-center flex-wrap" style="border-top: 2px solid var(--mc-dark);">
+                    <a href="https://mediadownloaderhub.pages.dev/" target="_blank" class="btn m-1">Live Web App</a>
+                    <a href="https://t.me/my_media_hub_bot" target="_blank" class="btn m-1">Telegram Bot</a>
+                  </div>
+                </div>
+              </div>
             </div>
         </div>
     </section>
@@ -186,10 +310,21 @@
                     <div class="col-lg-12 col-md-10">
 
                         <div class="timeline-wrapper ">
-                            <div class="timeline-item ">
-                                <span class="timeline-badge ">Present</span>
-                                <h4 class="h5 fw-bold mt-2 ms-5">Started Web Development</h4>
-                                <p class="text-style ms-5">
+                            <div class="timeline-item">
+                                <span class="timeline-badge">Present</span>
+                                <h4 class="h5 fw-bold mt-2">Media Downloader Hub Bot</h4>
+                                <p class="text-style">
+                                    Launched a dedicated web application for my Telegram media downloader bot.<br>
+                                    <a href="https://media-downloader-hub-bot.vercel.app" target="_blank" class="pixel-link-btn">View Bot App</a>
+                                    <a href="https://beautiful-reflection-production.up.railway.app/" target="_blank" class="pixel-link-btn">View Ecommerce App</a>
+                                    <a href="https://t.me/rupp_shop_bot" target="_blank" class="pixel-link-btn">View Rupp Shop Bot</a>
+                                </p>
+                            </div>
+
+                            <div class="timeline-item">
+                                <span class="timeline-badge">2024</span>
+                                <h4 class="h5 fw-bold mt-2">Started Web Development</h4>
+                                <p class="text-style">
                                     Began learning the fundamentals of HTML, CSS, and Bootstrap to build responsive user interfaces.
                                 </p>
                             </div>
@@ -204,8 +339,8 @@
 
                             <div class="timeline-item">
                                 <span class="timeline-badge ">2023</span>
-                                <h4 class="h5 fw-bold mt-2 ms-5">Building Full-Stack Projects</h4>
-                                <p class="text-style ms-5">
+                                <h4 class="h5 fw-bold mt-2">Building Full-Stack Projects</h4>
+                                <p class="text-style">
                                     Developing a comprehensive management system using Python (Flask) and SQL. Focusing on backend logic and database architecture.
                                 </p>
                             </div>
