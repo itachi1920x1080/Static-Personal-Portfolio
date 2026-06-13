@@ -84,7 +84,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     skills: [
                         { name: "Python", level: "82%" },
                         { name: "Django", level: "60%" },
-                        { name: "MySQL", level: "85%" }
+                        { name: "MySQL", level: "85%" },
+                        {name: "PHP", level: "60%"},
+                        {name: "Laravel", level: "60%"},
+                        {name: "Node JS", level: "60%"},
                     ]
                 },
                 tools: {
@@ -92,9 +95,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     icon: "fa-solid fa-screwdriver-wrench",
                     skills: [
                         { name: "Postman", level: "90%" },
-                        { name: "GitHub", level: "80%" },
                         { name: "VS Code", level: "85%" },
-                        { name: "PyCharm", level: "75%" }
+                        { name: "PyCharm", level: "75%" },
+                        {name: "Docker", level: "70%"},
+                        {name: "Git", level: "65%"},
+                        {name: "Linux", level: "60%"},
+                        {name :"Vercel", level: "90%"},
+                        {name:"Railway", level: "85%"}                 
                     ]
                 },
                 softskills: {
@@ -102,9 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     icon: "fa-solid fa-user-group",
                     skills: [
                         { name: "C", level: "60%" },
-                        { name: "C++", level: "65%" },
+                        { name: "C++", level: "65%" },  
                         { name: "Problem Solving", level: "85%" },
-                        { name: "Teamwork", level: "90%" }
+                        { name: "Teamwork", level: "90%" },
+                        { name: "Leadership", level: "60%" }
                     ]
                 }
             };
