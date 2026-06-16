@@ -214,6 +214,17 @@
                     </div>
                 </div>
 
+                <div class="col-12 col-md-4">
+                    <div class="card" data-bs-toggle="modal" data-bs-target="#aiEducationModal" style="cursor: pointer;">
+                        <div class="card-img-placeholder">
+                            <img src="/static/img/pairplot.png" alt="Analyzing AI in Education">
+                        </div>
+                        <h3>Analyzing AI in Education</h3>
+                        <p>Data analysis and visualization of AI perception in education.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- Modals -->
@@ -366,6 +377,41 @@
                   </div>
                   <div class="modal-footer border-dark justify-content-center flex-wrap" style="border-top: 2px solid var(--mc-dark);">
                     <a href="https://github.com/itachi1920x1080/tips-dataset-analysis.git" target="_blank" class="btn m-1">Source Code</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal fade" id="aiEducationModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content text-dark" style="background-color: var(--mc-gui); border: 4px solid var(--mc-dark); border-radius: 0;">
+                  <div class="modal-header border-dark" style="border-bottom: 2px solid var(--mc-dark);">
+                    <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: var(--mc-dark);">Analyzing AI in Education</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body text-center">
+                    <div id="aiEducationCarousel" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner border border-dark mb-3">
+                        <div class="carousel-item active">
+                          <img src="/static/img/pairplot.png" class="d-block w-100" alt="Pairplot Analysis" style="max-height: 60vh; object-fit: contain;">
+                        </div>
+                        <div class="carousel-item">
+                          <img src="/static/img/q3_year.png" class="d-block w-100" alt="Q3 Year Analysis" style="max-height: 60vh; object-fit: contain;">
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#aiEducationCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: var(--mc-dark); border-radius: 50%;"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#aiEducationCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: var(--mc-dark); border-radius: 50%;"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                    <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: var(--mc-dark);">Data analysis and visualization of AI perception in education using Python.</p>
+                  </div>
+                  <div class="modal-footer border-dark justify-content-center flex-wrap" style="border-top: 2px solid var(--mc-dark);">
+                    <a href="https://github.com/itachi1920x1080/analyzing-ai-in-education.git" target="_blank" class="btn m-1">Source Code</a>
                   </div>
                 </div>
               </div>
