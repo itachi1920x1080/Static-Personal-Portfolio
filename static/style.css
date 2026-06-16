@@ -10,6 +10,7 @@
     --bg-skills: #2a2a2a; /* Obsidian */
     --bg-experience: #1a0f2e; /* Nether Purple Dark */
     --bg-connect: #0f0f0f; /* Deep Stone */
+    --bg-card: rgba(29, 29, 29, 0.85);
     --text-shadow-nav: 2px 2px 0 #000;
     
     /* Cyber Redstone Accent */
@@ -33,6 +34,7 @@
     --bg-skills: #8b5a2b; /* Dirt Brown */
     --bg-experience: #a8a8a8; /* Light Stone */
     --bg-connect: #5d4037; /* Dark Dirt */
+    --bg-card: rgba(245, 245, 245, 0.9); /* Bright for contrast */
     --text-shadow-nav: none;
 
     /* Cyber Redstone Accent */
@@ -60,6 +62,7 @@
     --mc-gui-dark: #373737;
     --mc-gui-light: #ffffff;
     --font-pixel: 'VT323', monospace;
+    --font-modern: 'Inter', sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -79,8 +82,17 @@ section, header {
 section {
     padding-top: 80px; 
 }
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    
+    letter-spacing: 1.5px;
+    font-weight: normal;
+}
+
 body {
-    font-family: var(--font-pixel);
+    font-family: var(--font-modern);
+    letter-spacing: 0.5px;
+    line-height: 1.7;
     background-color: var(--bg-main);
     color: var(--text-main);
     transition: background-color 0.5s ease, color 0.5s ease;
@@ -93,7 +105,7 @@ body {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 50px;
-    text-shadow: 4px 4px 0 #000;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* Subtle glow */
     color: var(--mc-green-light);
 }
 
@@ -171,7 +183,7 @@ img { max-width: 100%; display: block; }
 /* --- HOME --- */
 #home {
     height: 100vh;
-    background: linear-gradient(to bottom, #79c0ff 0%, #a2d9ff 100%);
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -245,8 +257,7 @@ img { max-width: 100%; display: block; }
 /* --- PROFILE --- */
 #profile {
     min-height: 100vh;
-    background-color: var(--bg-profile);
-    transition: background-color 0.5s ease; 
+    background-color: transparent;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -308,7 +319,7 @@ img { max-width: 100%; display: block; }
 .profile-content {
     position: relative;
     z-index: 10;
-    background: rgba(29, 29, 29, 0.85);
+    background: var(--bg-card);
     padding: 40px;
     max-width: 600px;
     text-align: center;
@@ -374,9 +385,9 @@ img { max-width: 100%; display: block; }
 }
 
 #projects {
-    background-color: var(--projects-bg);
+    background-color: transparent;
     padding: 100px 0;
-    border-top: 10px solid var(--projects-border);
+    border-top: none;
     transition: background-color 0.5s ease, border-top-color 0.5s ease; 
     position: relative;
     z-index: 1;
@@ -386,7 +397,7 @@ img { max-width: 100%; display: block; }
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-image: var(--projects-stars);
+    /* /* background-image: var(--projects-stars); */ */
     background-repeat: repeat;
     background-size: 200px 200px;
     z-index: -1;
@@ -395,16 +406,16 @@ img { max-width: 100%; display: block; }
 
 
 .card {
-    background-color: var(--bg-skills);
-    border: 6px solid #1a1a1a;
-    border-top-color: #444;
-    border-left-color: #444;
-    padding: 15px;
+    background: var(--bg-card);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 20px 20px 40px 20px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    box-shadow: inset -4px -4px 0px rgba(0,0,0,0.5), inset 4px 4px 0px rgba(255,255,255,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     position: relative;
     overflow: hidden;
 }
@@ -421,9 +432,9 @@ img { max-width: 100%; display: block; }
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255, 51, 51, 0.4), inset -4px -4px 0px rgba(0,0,0,0.5), inset 4px 4px 0px rgba(255,255,255,0.1);
-    border-color: var(--accent-primary);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.8), 0 0 20px rgba(85,255,255,0.2);
+    border-color: rgba(85,255,255,0.5);
 }
 
 .card-img-placeholder {
@@ -443,7 +454,7 @@ img { max-width: 100%; display: block; }
     bottom: 5px; right: 5px;
     color: var(--accent-primary);
     font-size: 0.8rem;
-    font-family: var(--font-pixel);
+    
     text-shadow: 1px 1px 0 #000;
 }
 .iframe-thumbnail-container {
@@ -488,15 +499,7 @@ img { max-width: 100%; display: block; }
 
 /* --- SKILLS  --- */
 #Skills {
-            background-color: var(--bg-skills);
-    transition: background-color 0.5s ease;
-            background-image: 
-                linear-gradient(45deg, #222 25%, transparent 25%, transparent 75%, #222 75%, #222),
-                linear-gradient(45deg, #222 25%, transparent 25%, transparent 75%, #222 75%, #222);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
-            border-top: 4px solid #000;
-            border-bottom: 4px solid #000;
+            background-color: transparent;
             color: #fff;
             padding: 80px 0;
             font-family: 'VT323', monospace; 
@@ -506,12 +509,12 @@ img { max-width: 100%; display: block; }
 .skills-container {
     max-width: 900px;
     margin: 0 auto;
-    background-color: #c6c6c6; /* Classic Minecraft GUI gray */
-    padding: 20px;
-    border: 4px solid #fff;
-    border-right-color: #555;
-    border-bottom-color: #555;
-    box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
+    background: var(--bg-card);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .skills-tabs {
@@ -529,7 +532,7 @@ img { max-width: 100%; display: block; }
     border-bottom-color: #373737;
     padding: 10px 20px;
     cursor: pointer;
-    font-family: var(--font-pixel);
+    
     font-size: 1.2rem;
     color: #000;
     transition: transform 0.1s;
@@ -557,7 +560,7 @@ img { max-width: 100%; display: block; }
 .skill-info {
     display: flex;
     justify-content: space-between;
-    font-family: var(--font-pixel);
+    
     color: #000;
     font-size: 1.2rem;
     margin-bottom: 5px;
@@ -592,14 +595,14 @@ img { max-width: 100%; display: block; }
     padding: 20px 0;
 }
 .timeline-item {
-    background-color: var(--bg-skills);
-    border: 4px solid #555;
-    border-top-color: #fff;
-    border-left-color: #fff;
+    background: var(--bg-card);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
     position: relative;
-    box-shadow: inset -2px -2px 0px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     color: var(--text-main);
     transform: translateX(-50px);
     opacity: 0;
@@ -613,7 +616,7 @@ img { max-width: 100%; display: block; }
     background-color: var(--accent-primary);
     color: #fff;
     padding: 5px 10px;
-    font-family: var(--font-pixel);
+    
     font-size: 1.2rem;
     position: absolute;
     top: -15px;
@@ -628,10 +631,12 @@ img { max-width: 100%; display: block; }
 
 /* Contact / Obsidian Panel */
 #connect .container {
-    background-color: #111; /* Obsidian base */
-    border: 8px solid #2a0b4d; /* Glowing obsidian edge */
+    background: var(--bg-card);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
     padding: 40px;
-    box-shadow: inset 0 0 20px rgba(85, 0, 170, 0.5), 10px 10px 0 rgba(0,0,0,0.8);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 .pixel-input {
     background-color: #000;
@@ -639,7 +644,7 @@ img { max-width: 100%; display: block; }
     border-bottom-color: #fff;
     border-right-color: #fff;
     color: #55ff55;
-    font-family: var(--font-pixel);
+    
     padding: 10px;
 }
 .pixel-input:focus {
@@ -655,7 +660,7 @@ img { max-width: 100%; display: block; }
     border: 4px solid #ffaaaa;
     border-bottom-color: #550000;
     border-right-color: #550000;
-    font-family: var(--font-pixel);
+    
     font-size: 1.2rem;
 }
 .pixel-btn-submit:hover {
@@ -663,3 +668,51 @@ img { max-width: 100%; display: block; }
     color: #fff;
 }
 
+
+
+
+/* Voxel Universe & Planet */
+.voxel-universe {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: -10; pointer-events: none; perspective: 1200px; overflow: hidden;
+}
+#planet-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 2; pointer-events: none; }
+.planet-wrapper {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 280px; height: 280px; perspective: 800px; z-index: 2;
+}
+.planet-wrapper::after {
+    content: ''; position: absolute; top: -30px; left: -30px; width: 340px; height: 340px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(135,206,235,0.15) 30%, rgba(135,206,235,0) 70%); z-index: -1;
+    animation: planetGlow 6s ease-in-out infinite alternate;
+}
+@keyframes planetGlow { 0% { box-shadow: 0 0 60px rgba(135,206,235,0.2); } 100% { box-shadow: 0 0 100px rgba(135,206,235,0.4); } }
+
+
+.hero-text.container {
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: floatIn 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes floatIn {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.hero-text h1 {
+    font-size: 5rem;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.6); /* Subtle glow */
+    color: #fff;
+    margin-bottom: 10px;
+}
+.hero-text p {
+    color: #ddd;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
