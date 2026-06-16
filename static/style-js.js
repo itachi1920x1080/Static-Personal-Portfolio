@@ -176,3 +176,61 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         });
+
+// --- Theme Switcher Logic ---
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+
+    if (!themeToggleBtn || !themeIcon) return;
+
+    // Detect system preference
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+    // Determine the current theme
+    const currentTheme = localStorage.getItem("theme");
+
+    // Helper to apply theme
+    function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        if (theme === "dark") {
+            themeIcon.classList.remove("fa-sun", "fa-circle-half-stroke");
+            themeIcon.classList.add("fa-moon");
+        } else {
+            themeIcon.classList.remove("fa-moon", "fa-circle-half-stroke");
+            themeIcon.classList.add("fa-sun");
+        }
+    }
+
+    // Initialize theme on load
+    if (currentTheme === "dark") {
+        applyTheme("dark");
+    } else if (currentTheme === "light") {
+        applyTheme("light");
+    } else {
+        // Auto Mode
+        applyTheme(prefersDarkScheme.matches ? "dark" : "light");
+    }
+
+    // Toggle button click event
+    themeToggleBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let theme = document.documentElement.getAttribute("data-theme");
+        
+        if (theme === "dark") {
+            applyTheme("light");
+            localStorage.setItem("theme", "light");
+        } else {
+            applyTheme("dark");
+            localStorage.setItem("theme", "dark");
+        }
+    });
+
+    // Listen for system theme changes (Auto mode response)
+    prefersDarkScheme.addEventListener("change", (e) => {
+        // Only change if user hasn't manually overridden via localStorage
+        if (!localStorage.getItem("theme")) {
+            applyTheme(e.matches ? "dark" : "light");
+        }
+    });
+});

@@ -1,3 +1,42 @@
+
+:root[data-theme="dark"] {
+    --bg-main: var(--mc-dark);
+    --text-main: #fff;
+    --bg-nav: rgba(0, 0, 0, 0.85);
+    --text-nav: #fff;
+    --nav-hover: var(--mc-green-light);
+    --bg-profile: #111;
+    --bg-skills: #2f2f2f;
+    --bg-experience: #451919;
+    --bg-connect: #12081c;
+    --text-shadow-nav: 2px 2px 0 #000;
+    
+    /* Projects Starry Night Default */
+    --projects-bg: #090a0f;
+    --projects-border: #1a1b26;
+    --projects-stars: radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 40px 70px, #ffffff, rgba(0,0,0,0)), radial-gradient(2px 2px at 50px 160px, #dddddd, rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 90px 40px, #ffffff, rgba(0,0,0,0)), radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0,0,0,0)), radial-gradient(1.5px 1.5px at 160px 120px, #dddddd, rgba(0,0,0,0));
+    --projects-stars-animation: var(--projects-stars-animation);
+}
+
+:root[data-theme="light"] {
+    --bg-main: #f4f4f5;
+    --text-main: #1d1d1d;
+    --bg-nav: rgba(255, 255, 255, 0.95);
+    --text-nav: #333;
+    --nav-hover: var(--mc-green);
+    --bg-profile: #e2e8f0;
+    --bg-skills: #cbd5e1;
+    --bg-experience: #fef08a;
+    --bg-connect: #e0e7ff;
+    --text-shadow-nav: none;
+
+    /* Projects Daytime Sky */
+    --projects-bg: #87CEEB;
+    --projects-border: #4682B4;
+    --projects-stars: radial-gradient(40px 40px at 20% 30%, rgba(255,255,255,0.8), rgba(255,255,255,0)), radial-gradient(50px 50px at 70% 60%, rgba(255,255,255,0.6), rgba(255,255,255,0));
+    --projects-stars-animation: none;
+}
+
 :root {
     --mc-green: #58813c;
     --mc-green-light: #70a34f;
@@ -32,8 +71,9 @@ section {
 }
 body {
     font-family: var(--font-pixel);
-    background-color: var(--mc-dark);
-    color: #fff;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: background-color 0.5s ease, color 0.5s ease;
     overflow-x: hidden;
     font-size: 20px;
     line-height: 1.5;
@@ -53,7 +93,8 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: var(--bg-nav);
+    transition: background-color 0.5s ease;
     border-bottom: 4px solid var(--mc-green);
     z-index: 1000;
     padding: 15px 0;
@@ -69,17 +110,17 @@ nav ul {
     padding: 0;
 }
 nav a {
-    color: #fff;
+    color: var(--text-nav);
     text-decoration: none;
     font-size: 1.5rem;
     text-transform: uppercase;
-    text-shadow: 2px 2px 0 #000;
+    text-shadow: var(--text-shadow-nav);
 }
 
 
 nav a:hover {
-    color: var(--mc-green-light);
-    text-shadow: 0 0 10px var(--mc-green-light);
+    color: var(--nav-hover);
+    text-shadow: none;
 }
 
 .menu-icon {
@@ -194,7 +235,8 @@ img { max-width: 100%; display: block; }
 /* --- PROFILE --- */
 #profile {
     min-height: 100vh;
-    background-color: #111; 
+    background-color: var(--bg-profile);
+    transition: background-color 0.5s ease; 
     position: relative;
     display: flex;
     flex-direction: column;
@@ -322,9 +364,10 @@ img { max-width: 100%; display: block; }
 }
 
 #projects {
-    background-color: #090a0f;
+    background-color: var(--projects-bg);
     padding: 100px 0;
-    border-top: 10px solid #1a1b26; 
+    border-top: 10px solid var(--projects-border);
+    transition: background-color 0.5s ease, border-top-color 0.5s ease; 
     position: relative;
     z-index: 1;
 }
@@ -333,17 +376,11 @@ img { max-width: 100%; display: block; }
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background-image: 
-        radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 40px 70px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 50px 160px, #dddddd, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 90px 40px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 160px 120px, #dddddd, rgba(0,0,0,0));
+    background-image: var(--projects-stars);
     background-repeat: repeat;
     background-size: 200px 200px;
     z-index: -1;
-    animation: twinkle 5s infinite ease-in-out;
+    animation: var(--projects-stars-animation);
 }
 
 .card {
@@ -422,7 +459,8 @@ img { max-width: 100%; display: block; }
 
 /* --- SKILLS  --- */
 #Skills {
-            background-color: #2f2f2f;
+            background-color: var(--bg-skills);
+    transition: background-color 0.5s ease;
             background-image: 
                 linear-gradient(45deg, #222 25%, transparent 25%, transparent 75%, #222 75%, #222),
                 linear-gradient(45deg, #222 25%, transparent 25%, transparent 75%, #222 75%, #222);
@@ -529,7 +567,8 @@ img { max-width: 100%; display: block; }
 
 /* --- EXPERIENCE  --- */
 #experience {
-    background-color: #451919;
+    background-color: var(--bg-experience);
+    transition: background-color 0.5s ease;
     
     background-image: 
         linear-gradient(45deg, #5e2424 25%, transparent 25%, transparent 75%, #5e2424 75%, #5e2424),
@@ -665,7 +704,8 @@ img { max-width: 100%; display: block; }
 
 /* --- CONNECT  --- */
 #connect {
-    background-color: #12081c; 
+    background-color: var(--bg-connect);
+    transition: background-color 0.5s ease; 
     
     background-image: 
         radial-gradient(rgba(204, 0, 250, 0.15) 15%, transparent 16%), 
