@@ -893,3 +893,18 @@ footer p {
     }
 }
 
+
+/* Night mode modal buttons */
+.modal-content .btn {
+    background-color: #0b0c10;
+    color: #5dade2;
+    border-top-color: #5dade2;
+    border-left-color: #5dade2;
+    border-right-color: #1a5276;
+    border-bottom-color: #1a5276;
+}
+.modal-content .btn:hover {
+    background-color: #111424;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(93, 173, 226, 0.5);
+}
