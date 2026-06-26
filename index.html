@@ -61,8 +61,8 @@
         <div class="cloud c3"></div>
         
         <div class="hero-text container text-center">
-            <div class="avatar mb-4" style="width: 150px; height: 150px; margin: 0 auto; border: 4px solid var(--accent-primary); border-radius: 0; overflow: hidden; background: #000; box-shadow: 0 0 20px var(--accent-primary);">
-                <img src="/static/img/image.png" alt="Mao Visal Logo" style="width: 100%; height: 100%; object-fit: cover; image-rendering: pixelated;">
+            <div class="avatar mb-4" style="width: 150px; height: 150px; margin: 0 auto; border: 4px solid var(--accent-primary); border-radius: 50%; overflow: hidden; background: #000; box-shadow: 0 0 20px var(--accent-primary);">
+                <img src="/static/img/MAOVISAL.png" alt="Mao Visal Logo" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
             </div>
             <h1 style="text-shadow: 4px 4px 0 var(--accent-primary); font-family: var(--font-pixel);">HELLO WORLD</h1>
             <p style="font-size: 1.5rem; text-transform: uppercase;">Welcome to my server.</p>
@@ -80,7 +80,7 @@
 
         <div class="profile-content pixel-border">
             <div class="avatar">
-                <img src="/static/img/image.png" alt="Mao Visal Logo">
+                <img src="/static/img/MAOVISAL.png" alt="Mao Visal Logo">
             </div>
             
             <h2>MAO VISAL</h2>
@@ -90,7 +90,10 @@
                 Hi! I'm <strong>Mao Visal</strong>, a Computer Science student at RUPP specializing in Backend development and networking. I enjoy building secure, efficient systems using tools like Laravel, Tailwind CSS, and Python.
             </p>
 
-            <a href="#projects" class="btn">View Inventory</a>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="#projects" class="btn">View Inventory</a>
+                <a href="cv.html" class="btn" target="_blank">Download CV</a>
+            </div>
         </div>
     </section>
     </div>
@@ -214,6 +217,32 @@
                         </div>
                         <h3>AudioWAV</h3>
                         <p>A web application for handling audio WAV files.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card nether-fortress" data-bs-toggle="modal" data-bs-target="#qrCodeModal" style="cursor: pointer;">
+                        <div class="card-img-placeholder" style="background-color: transparent;">
+                            <div class="iframe-thumbnail-container">
+                                <iframe src="https://qr-code-generator-chi-green.vercel.app/" scrolling="no" tabindex="-1"></iframe>
+                            </div>
+                        </div>
+                        <h3>QR Code Generator</h3>
+                        <p>A web application for generating custom QR codes.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card nether-fortress" data-bs-toggle="modal" data-bs-target="#nagaVoiceModal" style="cursor: pointer;">
+                        <div class="card-img-placeholder" style="background-color: transparent;">
+                            <div class="iframe-thumbnail-container">
+                                <iframe src="https://naga-voice-ai.vercel.app/" scrolling="no" tabindex="-1"></iframe>
+                            </div>
+                        </div>
+                        <h3>Naga Voice AI</h3>
+                        <p>An AI voice application with interactive features.</p>
                         <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
                     </div>
                 </div>
@@ -412,6 +441,8 @@
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
             <a href="https://t.me/my_media_hub_bot" target="_blank" class="btn m-1">MediaDownloaderHub_Bot</a>
             <a href="https://t.me/rupp_shop_bot" target="_blank" class="btn m-1">RuppShop_Bot</a>
+            <a href="https://t.me/my_qr_awesome_bot" target="_blank" class="btn m-1">my_qr_awesome_bot</a>
+            <a href="https://t.me/NagaVoiceBot" target="_blank" class="btn m-1">NagaVoiceBot</a>
             </div>
         </div>
         </div>
@@ -543,6 +574,46 @@
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
             <a href="https://audio-wav.vercel.app/" target="_blank" class="btn m-1">Live Web App</a>
             <a href="https://github.com/itachi1920x1080/AudioWAV.git" target="_blank" class="btn m-1">Source Code</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="qrCodeModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
+            <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">QR Code Generator</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <div class="ratio ratio-16x9 mb-3 border border-info">
+                <iframe src="https://qr-code-generator-chi-green.vercel.app/" title="QR Code Generator Project" allowfullscreen></iframe>
+            </div>
+            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">A web application for generating custom QR codes.</p>
+            </div>
+            <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
+            <a href="https://qr-code-generator-chi-green.vercel.app/" target="_blank" class="btn m-1">Live Web App</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="nagaVoiceModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
+            <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Naga Voice AI</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <div class="ratio ratio-16x9 mb-3 border border-info">
+                <iframe src="https://naga-voice-ai.vercel.app/" title="Naga Voice AI Project" allowfullscreen></iframe>
+            </div>
+            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">An AI voice application with interactive features.</p>
+            </div>
+            <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
+            <a href="https://naga-voice-ai.vercel.app/" target="_blank" class="btn m-1">Live Web App</a>
             </div>
         </div>
         </div>
