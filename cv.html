@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mao Visal - CV</title>
+    <meta name="i18n-title-key" content="cv_doc_title">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <script src="/static/i18n.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         /* Base styles */
@@ -233,28 +238,166 @@
                 padding: 0;
             }
         }
+
+        /* Khmer & Russian Typography & Language Switcher for CV */
+        html[lang="km"] body {
+            font-family: 'Kantumruy Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.5;
+        }
+
+        html[lang="ru"] body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+        }
+
+        /* =============================================
+   FONT AWESOME ICON INTEGRITY PROTECTION
+   Preserve Font Awesome 6 across all languages (en, km, ru)
+   Prevent Chromium/HarfBuzz language-shaping from substituting PUA glyphs
+   ============================================= */
+
+i,
+[class*="fa-"],
+[class*="fa-"]::before,
+.fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands,
+.fa::before, .fas::before, .far::before, .fab::before,
+.fa-solid::before, .fa-regular::before, .fa-brands::before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    line-height: 1 !important;
+    letter-spacing: normal !important;
+}
+
+/* Brands Icons (Twitter, Instagram, TikTok, Telegram, YouTube, GitHub, LinkedIn, etc.) */
+.fa-brands,
+.fab,
+i.fa-brands,
+i.fab,
+[class*="fa-brands"],
+.fa-brands::before,
+.fab::before,
+i.fa-brands::before,
+i.fab::before,
+[class*="fa-brands"]::before,
+html[lang="km"] .fa-brands, html[lang="km"] .fab, html[lang="km"] i.fa-brands, html[lang="km"] i.fab,
+html[lang="km"] .fa-brands::before, html[lang="km"] .fab::before, html[lang="km"] i.fa-brands::before, html[lang="km"] i.fab::before,
+html[lang="ru"] .fa-brands, html[lang="ru"] .fab, html[lang="ru"] i.fa-brands, html[lang="ru"] i.fab,
+html[lang="ru"] .fa-brands::before, html[lang="ru"] .fab::before, html[lang="ru"] i.fa-brands::before, html[lang="ru"] i.fab::before {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400 !important;
+}
+
+/* Solid Icons (House, Briefcase, Location, Phone, Envelope, Circle-Half-Stroke, etc.) */
+.fa-solid,
+.fas,
+i.fa-solid,
+i.fas,
+[class*="fa-solid"],
+.fa-solid::before,
+.fas::before,
+i.fa-solid::before,
+i.fas::before,
+[class*="fa-solid"]::before,
+html[lang="km"] .fa-solid, html[lang="km"] .fas, html[lang="km"] i.fa-solid, html[lang="km"] i.fas,
+html[lang="km"] .fa-solid::before, html[lang="km"] .fas::before, html[lang="km"] i.fa-solid::before, html[lang="km"] i.fas::before,
+html[lang="ru"] .fa-solid, html[lang="ru"] .fas, html[lang="ru"] i.fa-solid, html[lang="ru"] i.fas,
+html[lang="ru"] .fa-solid::before, html[lang="ru"] .fas::before, html[lang="ru"] i.fa-solid::before, html[lang="ru"] i.fas::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+
+/* Regular Icons (User, Folder, Star, Envelope, etc.) */
+.fa-regular,
+.far,
+i.fa-regular,
+i.far,
+[class*="fa-regular"],
+.fa-regular::before,
+.far::before,
+i.fa-regular::before,
+i.far::before,
+[class*="fa-regular"]::before,
+html[lang="km"] .fa-regular, html[lang="km"] .far, html[lang="km"] i.fa-regular, html[lang="km"] i.far,
+html[lang="km"] .fa-regular::before, html[lang="km"] .far::before, html[lang="km"] i.fa-regular::before, html[lang="km"] i.far::before,
+html[lang="ru"] .fa-regular, html[lang="ru"] .far, html[lang="ru"] i.fa-regular, html[lang="ru"] i.far,
+html[lang="ru"] .fa-regular::before, html[lang="ru"] .far::before, html[lang="ru"] i.fa-regular::before, html[lang="ru"] i.far::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 400 !important;
+}
+
+html[lang="km"] .contact-info i,
+html[lang="km"] .item-title i,
+html[lang="km"] .item-subtitle i {
+    letter-spacing: normal !important;
+}
+
+        .cv-lang-switch {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: white;
+            padding: 4px 6px;
+            border-radius: 6px;
+            margin-right: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cv-lang-btn {
+            background: transparent;
+            border: none;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            color: var(--text-color);
+            transition: all 0.2s ease;
+        }
+
+        .cv-lang-btn:hover {
+            color: var(--secondary-color);
+        }
+
+        .cv-lang-btn.active {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        @media print {
+            .cv-lang-switch {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="main-container">
         <div class="controls">
-            <button class="download-btn" onclick="downloadPDF()">Download CV as PDF</button>
+            <div class="cv-lang-switch" role="group" aria-label="Language Switcher">
+                <button type="button" class="cv-lang-btn active" data-lang="en">🇬🇧 EN</button>
+                <button type="button" class="cv-lang-btn" data-lang="km">🇰🇭 KM</button>
+                <button type="button" class="cv-lang-btn" data-lang="ru">🇷🇺 RU</button>
+            </div>
+            <button class="download-btn" onclick="downloadPDF()" data-i18n="cv_download_btn">Download CV as PDF</button>
         </div>
 
         <div class="cv-document" id="cv-content">
             <header>
                 <div class="header-text">
-                    <h1>MAO VISAL</h1>
-                    <div class="job-title">Student at Royal University of Phnom Penh </div>
+                    <h1 data-i18n="profile_name">MAO VISAL</h1>
+                    <div class="job-title" data-i18n="cv_job_title">Student at Royal University of Phnom Penh</div>
                     <div class="contact-info">
-                        <div><i class="fa-solid fa-location-dot"></i> Phnom Penh, Cambodia</div>
-                        <div><i class="fa-solid fa-phone"></i> (+855) 70 213 069</div>
-                        <div><a href="mailto:maovisal1999@gmail.com"><i class="fa-solid fa-envelope"></i> maovisal1999@gmail.com</a></div>
-                        <div><a href="https://github.com/itachi1920x1080" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> github.com/itachi1920x1080</a></div> 
-                        <div><a href="https://maovisal.vercel.app" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i> maovisal.vercel.app</a></div>
-                        <div><a href="https://t.me/Lovealonesusususususususususu" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i> t.me/Lovealonesusususususususu</a></div>
-                        <div><a href="https://www.linkedin.com/in/mao-visal-22586536a" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> linkedin.com/in/mao-visal-22586536a</a></div>
+                        <div><i class="fa-solid fa-location-dot" lang="en" translate="no"></i> <span data-i18n="cv_location">Phnom Penh, Cambodia</span></div>
+                        <div><i class="fa-solid fa-phone" lang="en" translate="no"></i> (+855) 70 213 069</div>
+                        <div><a href="mailto:maovisal1999@gmail.com"><i class="fa-solid fa-envelope" lang="en" translate="no"></i> maovisal1999@gmail.com</a></div>
+                        <div><a href="https://github.com/itachi1920x1080" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" lang="en" translate="no"></i> github.com/itachi1920x1080</a></div> 
+                        <div><a href="https://maovisal.vercel.app" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe" lang="en" translate="no"></i> maovisal.vercel.app</a></div>
+                        <div><a href="https://t.me/Lovealonesusususususususususu" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram" lang="en" translate="no"></i> t.me/Lovealonesusususususususu</a></div>
+                        <div><a href="https://www.linkedin.com/in/mao-visal-22586536a" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" lang="en" translate="no"></i> linkedin.com/in/mao-visal-22586536a</a></div>
                     </div>
                 </div>
                 <div class="header-image">
@@ -263,80 +406,78 @@
             </header>
 
             <section class="section">
-                <h2 class="section-title">Personal Information</h2>
+                <h2 class="section-title" data-i18n="cv_sec_personal">Personal Information</h2>
                 <div class="grid-2-col">
                     <div>
                         <ul class="item-list" style="list-style-type: none; padding-left: 0;">
-                            <li><strong>Name:</strong> Mao Visal</li>
-                            <li><strong>Sex:</strong> Male</li>
-                            <li><strong>National Status:</strong> Cambodia</li>
-                            <li><strong>Marital Status:</strong> Single</li>
+                            <li><strong data-i18n="cv_lbl_name">Name:</strong> <span data-i18n="cv_val_name">Mao Visal</span></li>
+                            <li><strong data-i18n="cv_lbl_sex">Sex:</strong> <span data-i18n="cv_val_sex">Male</span></li>
+                            <li><strong data-i18n="cv_lbl_nat">National Status:</strong> <span data-i18n="cv_val_nat">Cambodia</span></li>
+                            <li><strong data-i18n="cv_lbl_marital">Marital Status:</strong> <span data-i18n="cv_val_marital">Single</span></li>
                         </ul>
                     </div>
                     <div>
                         <ul class="item-list" style="list-style-type: none; padding-left: 0;">
-                            <li><strong>Date of Birth:</strong> 18 February 2006</li>
-                            <li><strong>Place of Birth:</strong> #469B, Street Lum, Phum Lor Kambor, Sangkat Svay Park, Khan Russey Keo, Phnom Penh</li>
+                            <li><strong data-i18n="cv_lbl_dob">Date of Birth:</strong> <span data-i18n="cv_val_dob">18 February 2006</span></li>
+                            <li><strong data-i18n="cv_lbl_pob">Place of Birth:</strong> <span data-i18n="cv_val_pob">#469B, Street Lum, Phum Lor Kambor, Sangkat Svay Park, Khan Russey Keo, Phnom Penh</span></li>
                         </ul>
                     </div>
                 </div>
             </section>
 
             <section class="section">
-                <h2 class="section-title">Professional Summary</h2>
-                <p class="summary">
-                    Motivated Computer Science student currently pursuing a 4-year Bachelor's degree at the Royal University of Phnom Penh (RUPP), with strong knowledge of software engineering, backend development, and cybersecurity fundamentals. Experienced in building real-world applications using Python, Flask, FastAPI, PHP, Laravel, REST APIs, MySQL, SQLite, HTML, CSS, and JavaScript. Skilled at developing full-stack web applications, desktop software, automation tools, Telegram bots, and AI-assisted solutions while following secure software development practices. Familiar with Git, GitHub, Linux, networking concepts, authentication systems, and API integration. Passionate about solving complex technical problems, collaborating within teams, and continuously learning modern technologies to build scalable, secure, and high-performance applications.
-                </p>
+                <h2 class="section-title" data-i18n="cv_sec_summary">Professional Summary</h2>
+                <p class="summary" data-i18n="cv_summary_text">Motivated Computer Science student currently pursuing a 4-year Bachelor's degree at the Royal University of Phnom Penh (RUPP), with strong knowledge of software engineering, backend development, and cybersecurity fundamentals. Experienced in building real-world applications using Python, Flask, FastAPI, PHP, Laravel, REST APIs, MySQL, SQLite, HTML, CSS, and JavaScript. Skilled at developing full-stack web applications, desktop software, automation tools, Telegram bots, and AI-assisted solutions while following secure software development practices. Familiar with Git, GitHub, Linux, networking concepts, authentication systems, and API integration. Passionate about solving complex technical problems, collaborating within teams, and continuously learning modern technologies to build scalable, secure, and high-performance applications.</p>
             </section>
 
             <section class="section">
-                <h2 class="section-title">Education & Certifications</h2>
+                <h2 class="section-title" data-i18n="cv_sec_education">Education & Certifications</h2>
                 <div class="grid-2-col">
                     <div>
                         <div class="item">
-                            <div class="item-title">Royal University of Phnom Penh (RUPP)</div>
-                            <div class="item-subtitle">Bachelor of Computer Science | 2023 – Present</div>
-                            <p><strong>Current GPA:</strong> 3.42 / 4.0 (Year 1)</p>
+                            <div class="item-title" data-i18n="cv_edu_rupp_title">Royal University of Phnom Penh (RUPP)</div>
+                            <div class="item-subtitle" data-i18n="cv_edu_rupp_sub">Bachelor of Computer Science and Engineering | 2023 – Present</div>
+                            <p style="font-size: 0.9rem; margin-top: 0.15rem;"><strong data-i18n="cv_edu_rupp_year">Current Year:</strong> <span data-i18n="cv_edu_rupp_year_val">1th Year</span></p>
+                            <p style="font-size: 0.9rem; margin-top: 0.1rem;"><strong data-i18n="cv_edu_rupp_gpa">Current GPA:</strong> 3.42 / 4.0</p>
                         </div>
                         <div class="item">
-                            <div class="item-title">Paññāsāstra University of Cambodia</div>
-                            <div class="item-subtitle">IEAP-Level (1-4) | 2025 - Present</div>  
-                            <div class="item-subtitle">Intensive English for Academic Purposes</div>
+                            <div class="item-title" data-i18n="cv_edu_puc_title">Paññāsāstra University of Cambodia</div>
+                            <div class="item-subtitle" data-i18n="cv_edu_puc_sub">Intensive English for Academic Purposes (IEAP), Levels 1–4 | 2025 – 2026</div>
                         </div>
                         <div class="item">
-                            <div class="item-title">Chea Sim Chamroeun Roth High School</div>
-                            <div class="item-subtitle">High School Diploma (Baccalaureate II) | 2023</div>
+                            <div class="item-title" data-i18n="cv_edu_highschool_title">Chea Sim Chamroeun Roth High School</div>
+                            <div class="item-subtitle" data-i18n="cv_edu_highschool_sub">High School Diploma (Baccalaureate II) | 2023</div>
                         </div>
                     </div>
                     <div>
                         <div class="item">
-                            <div class="item-title">ETECH CENTER (2024)</div>
+                            <div class="item-title" data-i18n="cv_edu_ntti_title">National Technical Training Institute (NTTI)</div>
+                            <div class="item-subtitle" data-i18n="cv_edu_ntti_sub">Computer Services Internship | 2026 – Present</div>
+                        </div>
+                        <div class="item">
+                            <div class="item-title" data-i18n="cv_edu_etech_title">ETECH Center | 2024</div>
                             <ul class="item-list" style="margin-top: 0.5rem;">
-                                <li>Basic & Advanced Python Programming</li>
-                                <li>Flask Web Development</li>
-                                <li>Software Project Development</li>
+                                <li data-i18n="cv_edu_etech_li1">Basic & Advanced Python Programming</li>
+                                <li data-i18n="cv_edu_etech_li2">Flask Web Development</li>
+                                <li data-i18n="cv_edu_etech_li3">Software Project Development</li>
                             </ul>
                         </div>
-                        <div class="item">
-                            <div class="item-title">National Technical Training Institute (NTTI)</div>
-                            <div class="item-subtitle">Computer Services | 2026 - Present</div>
-                        </div>
                     </div>
                 </div>
             </section>
 
             <section class="section">
-                <h2 class="section-title">Technical Skills</h2>
+                <h2 class="section-title" data-i18n="cv_sec_skills">Technical Skills</h2>
                 <div class="grid-2-col">
                     <div class="skills-group">
-                        <strong>Programming Languages</strong>
+                        <strong data-i18n="cv_skills_grp1">Programming Languages</strong>
                         <div class="tags">
                             <span class="tag">Python</span> <span class="tag">PHP</span> <span class="tag">Java</span> 
                             <span class="tag">C/C++</span> <span class="tag">SQL</span> <span class="tag">JavaScript</span>
                         </div>
                     </div>
                     <div class="skills-group">
-                        <strong>Backend & APIs</strong>
+                        <strong data-i18n="cv_skills_grp2">Backend & APIs</strong>
                         <div class="tags">
                             <span class="tag">Flask</span> <span class="tag">FastAPI</span> <span class="tag">Laravel</span> 
                             <span class="tag">REST APIs</span> <span class="tag">Authentication</span>
@@ -364,7 +505,7 @@
                         </div>
                     </div>
                     <div class="skills-group">
-                        <strong>Data Science & Desktop Dev</strong>
+                        <strong data-i18n="cv_skills_grp6">Data Science & Desktop Dev</strong>
                         <div class="tags">
                             <span class="tag">Pandas</span> <span class="tag">NumPy</span> <span class="tag">Matplotlib</span> 
                             <span class="tag">PyQt</span> <span class="tag">Tkinter</span>
@@ -374,99 +515,106 @@
             </section>
 
             <section class="section">
-                <h2 class="section-title">Professional Projects</h2>
+                <h2 class="section-title" data-i18n="cv_sec_projects">Professional Projects</h2>
                 
                 <div class="item">
-                    <div class="item-title">Student Management System</div>
-                    <div class="item-subtitle">Python • Flask • MySQL • Face Recognition</div>
+                    <div class="item-title" data-i18n="cv_proj1_title">Student Management System</div>
+                    <div class="item-subtitle" data-i18n="cv_proj1_sub">Python • Flask • MySQL • Face Recognition</div>
                     <ul class="item-list">
-                        <li>Developed a complete student management platform for academic administration.</li>
-                        <li>Implemented facial recognition attendance tracking, secure authentication, and role-based access.</li>
-                        <li>Designed a normalized MySQL database for records, reports, departments, classes, and scheduling.</li>
+                        <li data-i18n="cv_proj1_li1">Developed a complete student management platform for academic administration.</li>
+                        <li data-i18n="cv_proj1_li2">Implemented facial recognition attendance tracking, secure authentication, and role-based access.</li>
+                        <li data-i18n="cv_proj1_li3">Designed a normalized MySQL database for records, reports, departments, classes, and scheduling.</li>
                     </ul>
                 </div>
 
                 <div class="item">
-                    <div class="item-title">Multi-Platform Media Downloader</div>
-                    <div class="item-subtitle">Python • Flask • Telegram Bot • yt-dlp</div>
+                    <div class="item-title" data-i18n="cv_proj2_title">Multi-Platform Media Downloader</div>
+                    <div class="item-subtitle" data-i18n="cv_proj2_sub">Python • Flask • Telegram Bot • yt-dlp</div>
                     <ul class="item-list">
-                        <li>Built a downloader supporting YouTube, TikTok, Facebook, Instagram, Reddit, and Twitter/X.</li>
-                        <li>Developed a responsive web dashboard and integrated a Telegram Bot for automated downloads.</li>
+                        <li data-i18n="cv_proj2_li1">Built a downloader supporting YouTube, TikTok, Facebook, Instagram, Reddit, and Twitter/X.</li>
+                        <li data-i18n="cv_proj2_li2">Developed a responsive web dashboard and integrated a Telegram Bot for automated downloads.</li>
                     </ul>
                 </div>
 
                 <div class="item">
-                    <div class="item-title">Web Shop Application & Telegram Automation Bots</div>
-                    <div class="item-subtitle">Flask • MySQL • REST API • Python</div>
+                    <div class="item-title" data-i18n="cv_proj3_title">Web Shop Application & Telegram Automation Bots</div>
+                    <div class="item-subtitle" data-i18n="cv_proj3_sub">Flask • MySQL • REST API • Python</div>
                     <ul class="item-list">
-                        <li>Built an e-commerce application with secure authentication, user management, and REST APIs.</li>
-                        <li>Developed workflow automation bots for media downloading and file processing via Telegram Bot API.</li>
+                        <li data-i18n="cv_proj3_li1">Built an e-commerce application with secure authentication, user management, and REST APIs.</li>
+                        <li data-i18n="cv_proj3_li2">Developed workflow automation bots for media downloading and file processing via Telegram Bot API.</li>
                     </ul>
                 </div>
 
                 <div class="item">
-                    <div class="item-title">Python Blockchain Project & Data Analysis</div>
-                    <div class="item-subtitle">Python • Pandas • NumPy • Matplotlib</div>
+                    <div class="item-title" data-i18n="cv_proj4_title">Python Blockchain Project & Data Analysis</div>
+                    <div class="item-subtitle" data-i18n="cv_proj4_sub">Python • Pandas • NumPy • Matplotlib</div>
                     <ul class="item-list">
-                        <li>Developed a decentralized blockchain ledger utilizing SHA-based block hashing and transaction validation.</li>
-                        <li>Conducted data cleaning, EDA, and statistical analysis on datasets including "Tips" and "AI in Education".</li>
+                        <li data-i18n="cv_proj4_li1">Developed a decentralized blockchain ledger utilizing SHA-based block hashing and transaction validation.</li>
+                        <li data-i18n="cv_proj4_li2">Conducted data cleaning, EDA, and statistical analysis on datasets including "Tips" and "AI in Education".</li>
                     </ul>
                 </div>
                 <div class="item">
-                    <div class="item-title">QR Code Generator & Naga Voice AI</div>
-                    <div class="item-subtitle">Web Applications • AI • Telegram Bots</div>
+                    <div class="item-title" data-i18n="cv_proj5_title">QR Code Generator & Naga Voice AI</div>
+                    <div class="item-subtitle" data-i18n="cv_proj5_sub">Web Applications • AI • Telegram Bots</div>
                     <ul class="item-list">
-                        <li>Developed a web application for generating custom QR codes.</li>
-                        <li>Built Naga Voice AI, an AI voice application with interactive features.</li>
-                        <li>Integrated corresponding Telegram bots (@my_qr_awesome_bot, @NagaVoiceBot) for user accessibility.</li>
+                        <li data-i18n="cv_proj5_li1">Developed a web application for generating custom QR codes.</li>
+                        <li data-i18n="cv_proj5_li2">Built Naga Voice AI, an AI voice application with interactive features.</li>
+                        <li data-i18n="cv_proj5_li3">Integrated corresponding Telegram bots (@my_qr_awesome_bot, @NagaVoiceBot) for user accessibility.</li>
+                    </ul>
+                </div>
+                <div class="item">
+                    <div class="item-title" data-i18n="cv_proj6_title">IT Lab Series: Windows Server & AWS</div>
+                    <div class="item-subtitle" data-i18n="cv_proj6_sub">System Administration • Windows Server 2022 • Active Directory • AWS</div>
+                    <ul class="item-list">
+                        <li data-i18n="cv_proj6_li1">Created hands-on instructional video tutorials on YouTube demonstrating Windows Server 2022 administration.</li>
+                        <li data-i18n="cv_proj6_li2">Demonstrated Active Directory Domain Services, GPO configuration, DHCP, and file sharing permissions.</li>
+                        <li data-i18n="cv_proj6_li3">Integrated on-premises virtual lab environments with AWS Cloud infrastructure.</li>
                     </ul>
                 </div>
             </section>
 
             <section class="section">
-                <h2 class="section-title">Experience</h2>
+                <h2 class="section-title" data-i18n="cv_sec_experience">Experience</h2>
                 <div class="item">
-                    <div class="item-title">IT Support Intern</div>
-                    <div class="item-subtitle">NTTI Computer Service | Duration: 1 Month (Part-time: Saturday & Sunday)</div>
+                    <div class="item-title" data-i18n="cv_exp_intern_title">IT Support Intern</div>
+                    <div class="item-subtitle" data-i18n="cv_exp_intern_sub">NTTI Computer Service | Duration: 1 Month (Part-time: Saturday & Sunday)</div>
                     <ul class="item-list">
-                        <li>Assisted with basic computer hardware and software troubleshooting.</li>
-                        <li>Supported computer maintenance and system installation.</li>
-                        <li>Gained practical experience in computer services and IT support.</li>
+                        <li data-i18n="cv_exp_intern_li1">Assisted with basic computer hardware and software troubleshooting.</li>
+                        <li data-i18n="cv_exp_intern_li2">Supported computer maintenance and system installation.</li>
+                        <li data-i18n="cv_exp_intern_li3">Gained practical experience in computer services and IT support.</li>
                     </ul>
                 </div>
                 <div class="item">
-                    <div class="item-title">Independent Software Developer</div>
-                    <p class="summary" style="margin-top: 0.5rem; font-size: 0.95rem;">
-                        Independently designed and developed numerous software projects including web applications, backend systems, desktop applications, automation tools, Telegram bots, blockchain applications, and data analysis projects. These experiences strengthened my understanding of software architecture, database design, REST APIs, authentication, debugging, Git version control, and secure software development practices.
-                    </p>
+                    <div class="item-title" data-i18n="cv_exp_dev_title">Independent Software Developer</div>
+                    <p class="summary" style="margin-top: 0.5rem; font-size: 0.95rem;" data-i18n="cv_exp_dev_desc">Independently designed and developed numerous software projects including web applications, backend systems, desktop applications, automation tools, Telegram bots, blockchain applications, and data analysis projects. These experiences strengthened my understanding of software architecture, database design, REST APIs, authentication, debugging, Git version control, and secure software development practices.</p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="grid-2-col">
                     <div>
-                        <h2 class="section-title">Soft Skills</h2>
+                        <h2 class="section-title" data-i18n="cv_sec_softskills">Soft Skills</h2>
                         <ul class="item-list" style="list-style-type: none; padding-left: 0;">
-                            <li>✔️ Problem Solving & Critical Thinking</li>
-                            <li>✔️ Leadership & Teamwork</li>
-                            <li>✔️ Adaptability & Time Management</li>
-                            <li>✔️ Fast Learning & Self-Motivation</li>
+                            <li data-i18n="cv_soft_1">✔️ Problem Solving & Critical Thinking</li>
+                            <li data-i18n="cv_soft_2">✔️ Leadership & Teamwork</li>
+                            <li data-i18n="cv_soft_3">✔️ Adaptability & Time Management</li>
+                            <li data-i18n="cv_soft_4">✔️ Fast Learning & Self-Motivation</li>
                         </ul>
 
-                        <h2 class="section-title" style="margin-top: 1.5rem;">Languages</h2>
+                        <h2 class="section-title" style="margin-top: 1.5rem;" data-i18n="cv_sec_languages">Languages</h2>
                         <ul class="item-list" style="list-style-type: none; padding-left: 0;">
-                            <li>🇰🇭 <strong>Khmer</strong> — Native</li>
-                            <li>🇬🇧 <strong>English</strong> — Intermediate</li>
+                            <li data-i18n-html="cv_lang_1">🇰🇭 <strong>Khmer</strong> — Native</li>
+                            <li data-i18n-html="cv_lang_2">🇬🇧 <strong>English</strong> — Intermediate</li>
                         </ul>
                     </div>
                     <div>
-                        <h2 class="section-title">Interests</h2>
+                        <h2 class="section-title" data-i18n="cv_sec_interests">Interests</h2>
                         <ul class="item-list" style="list-style-type: none; padding-left: 0;">
-                            <li>🚀 Software Engineering & Backend Dev</li>
-                            <li>🧠 Artificial Intelligence & Machine Learning</li>
-                            <li>🛡️ Cybersecurity & Ethical Hacking</li>
-                            <li>☁️ Cloud Computing & Networking</li>
-                            <li>🌍 Open Source Contribution</li>
+                            <li data-i18n="cv_int_1">🚀 Software Engineering & Backend Dev</li>
+                            <li data-i18n="cv_int_2">🧠 Artificial Intelligence & Machine Learning</li>
+                            <li data-i18n="cv_int_3">🛡️ Cybersecurity & Ethical Hacking</li>
+                            <li data-i18n="cv_int_4">☁️ Cloud Computing & Networking</li>
+                            <li data-i18n="cv_int_5">🌍 Open Source Contribution</li>
                         </ul>
                     </div>
                 </div>
@@ -490,13 +638,17 @@
             // Change button text while processing
             const btn = document.querySelector('.download-btn');
             const originalText = btn.innerText;
-            btn.innerText = 'Generating PDF...';
+            btn.innerText = (window.i18n && typeof window.i18n.t === 'function')
+                ? window.i18n.t('cv_generating_btn')
+                : 'Generating PDF...';
             btn.disabled = true;
 
             // Generate and save the PDF
             html2pdf().set(opt).from(element).save().then(() => {
                 // Restore button state
-                btn.innerText = originalText;
+                btn.innerText = (window.i18n && typeof window.i18n.t === 'function')
+                    ? window.i18n.t('cv_download_btn')
+                    : 'Download CV as PDF';
                 btn.disabled = false;
             });
         }

@@ -1,5 +1,7 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,300..700;1,300..700&display=swap');
+
 :root[data-theme="dark"] {
     --bg-main: #0c0d14; /* Night Sky */
     --text-main: #e0e0e0;
@@ -717,4 +719,231 @@ img { max-width: 100%; display: block; }
 .hero-text p {
     color: #ddd;
     text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =============================================
+   MULTILINGUAL TYPOGRAPHY SUPPORT (KM & RU)
+   ============================================= */
+
+html[lang="km"] body {
+    font-family: 'Kantumruy Pro', var(--font-modern), sans-serif;
+}
+
+html[lang="km"] h1,
+html[lang="km"] h2,
+html[lang="km"] h3,
+html[lang="km"] .section-title,
+html[lang="km"] .modal-title,
+html[lang="km"] .nav-link,
+html[lang="km"] .btn,
+html[lang="km"] .tab-card,
+html[lang="km"] .pixel-btn-social,
+html[lang="km"] .pixel-link-btn {
+    font-family: 'Kantumruy Pro', var(--font-pixel), sans-serif;
+    letter-spacing: 0.5px;
+}
+
+html[lang="km"] .navbar-nav a {
+    font-size: 1.25rem;
+}
+
+/* Russian Typography */
+html[lang="ru"] body {
+    font-family: var(--font-modern), sans-serif;
+}
+
+html[lang="ru"] .nav-link,
+html[lang="ru"] .btn,
+html[lang="ru"] .tab-card,
+html[lang="ru"] .pixel-btn-social,
+html[lang="ru"] .pixel-link-btn {
+    letter-spacing: 0.5px;
+}
+
+/* =============================================
+   FONT AWESOME ICON INTEGRITY PROTECTION
+   Preserve Font Awesome 6 across all languages (en, km, ru)
+   Prevent Chromium/HarfBuzz language-shaping from substituting PUA glyphs
+   ============================================= */
+
+i,
+[class*="fa-"],
+[class*="fa-"]::before,
+.fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands,
+.fa::before, .fas::before, .far::before, .fab::before,
+.fa-solid::before, .fa-regular::before, .fa-brands::before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal !important;
+    font-variant: normal !important;
+    text-rendering: auto !important;
+    line-height: 1 !important;
+    letter-spacing: normal !important;
+}
+
+/* Brands Icons (Twitter, Instagram, TikTok, Telegram, YouTube, GitHub, LinkedIn, etc.) */
+.fa-brands,
+.fab,
+i.fa-brands,
+i.fab,
+[class*="fa-brands"],
+.fa-brands::before,
+.fab::before,
+i.fa-brands::before,
+i.fab::before,
+[class*="fa-brands"]::before,
+html[lang="km"] .fa-brands, html[lang="km"] .fab, html[lang="km"] i.fa-brands, html[lang="km"] i.fab,
+html[lang="km"] .fa-brands::before, html[lang="km"] .fab::before, html[lang="km"] i.fa-brands::before, html[lang="km"] i.fab::before,
+html[lang="ru"] .fa-brands, html[lang="ru"] .fab, html[lang="ru"] i.fa-brands, html[lang="ru"] i.fab,
+html[lang="ru"] .fa-brands::before, html[lang="ru"] .fab::before, html[lang="ru"] i.fa-brands::before, html[lang="ru"] i.fab::before {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400 !important;
+}
+
+/* Solid Icons (House, Briefcase, Location, Phone, Envelope, Circle-Half-Stroke, etc.) */
+.fa-solid,
+.fas,
+i.fa-solid,
+i.fas,
+[class*="fa-solid"],
+.fa-solid::before,
+.fas::before,
+i.fa-solid::before,
+i.fas::before,
+[class*="fa-solid"]::before,
+html[lang="km"] .fa-solid, html[lang="km"] .fas, html[lang="km"] i.fa-solid, html[lang="km"] i.fas,
+html[lang="km"] .fa-solid::before, html[lang="km"] .fas::before, html[lang="km"] i.fa-solid::before, html[lang="km"] i.fas::before,
+html[lang="ru"] .fa-solid, html[lang="ru"] .fas, html[lang="ru"] i.fa-solid, html[lang="ru"] i.fas,
+html[lang="ru"] .fa-solid::before, html[lang="ru"] .fas::before, html[lang="ru"] i.fa-solid::before, html[lang="ru"] i.fas::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+}
+
+/* Regular Icons (User, Folder, Star, Envelope, etc.) */
+.fa-regular,
+.far,
+i.fa-regular,
+i.far,
+[class*="fa-regular"],
+.fa-regular::before,
+.far::before,
+i.fa-regular::before,
+i.far::before,
+[class*="fa-regular"]::before,
+html[lang="km"] .fa-regular, html[lang="km"] .far, html[lang="km"] i.fa-regular, html[lang="km"] i.far,
+html[lang="km"] .fa-regular::before, html[lang="km"] .far::before, html[lang="km"] i.fa-regular::before, html[lang="km"] i.far::before,
+html[lang="ru"] .fa-regular, html[lang="ru"] .far, html[lang="ru"] i.fa-regular, html[lang="ru"] i.far,
+html[lang="ru"] .fa-regular::before, html[lang="ru"] .far::before, html[lang="ru"] i.fa-regular::before, html[lang="ru"] i.far::before {
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 400 !important;
+}
+
+/* Ensure icons inside nav-links, buttons, and titles never inherit Khmer typography */
+html[lang="km"] .nav-link i,
+html[lang="km"] .btn i,
+html[lang="km"] .pixel-btn-social i,
+html[lang="km"] .pixel-link-btn i,
+html[lang="km"] .social-links i,
+html[lang="km"] .category-title i {
+    letter-spacing: normal !important;
+}
+
+/* Language Switcher Navbar Styles */
+.lang-dropdown-item {
+    position: relative;
+    list-style: none;
+}
+
+.lang-dropdown-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px !important;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.lang-dropdown-toggle:hover {
+    background: rgba(255, 51, 51, 0.15);
+    border-color: var(--accent-primary);
+}
+
+.lang-flag {
+    font-size: 1.15rem;
+    line-height: 1;
+    display: inline-block;
+}
+
+.pixel-dropdown-menu {
+    background-color: var(--bg-card, #111424) !important;
+    border: 3px solid var(--accent-primary, #ff3333) !important;
+    border-radius: 0 !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6) !important;
+    padding: 6px !important;
+    min-width: 175px;
+    margin-top: 8px !important;
+}
+
+.pixel-dropdown-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    color: var(--text-main, #fff) !important;
+    font-family: var(--font-modern);
+    font-size: 1rem;
+    padding: 8px 12px !important;
+    background: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pixel-dropdown-menu .dropdown-item:hover,
+.pixel-dropdown-menu .dropdown-item:focus {
+    background: rgba(255, 51, 51, 0.2) !important;
+    border-color: var(--accent-primary, #ff3333);
+    color: #fff !important;
+}
+
+.pixel-dropdown-menu .dropdown-item.active {
+    background: var(--accent-primary, #ff3333) !important;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.lang-badge {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    font-family: var(--font-pixel);
+    letter-spacing: 1px;
+}
+
+/* Responsive adjustment for Mobile Nav */
+@media (max-width: 991px) {
+    .lang-dropdown-item {
+        margin: 10px 0;
+    }
+    .lang-dropdown-toggle {
+        justify-content: center;
+        width: auto;
+        display: inline-flex !important;
+    }
+    .pixel-dropdown-menu {
+        position: static !important;
+        float: none !important;
+        margin: 8px auto 0 !important;
+        transform: none !important;
+        display: none;
+    }
+    .pixel-dropdown-menu.show {
+        display: block;
+    }
 }

@@ -16,15 +16,22 @@ document.addEventListener("DOMContentLoaded", () => {
         const message = inputField.value;
 
         if (message.trim() === "") {
-            alert("[Error] Please enter a message before sending.");
+            const errorMsg = (window.i18n && typeof window.i18n.t === "function") 
+                ? window.i18n.t("contact_alert_error") 
+                : "[Error] Please enter a message before sending.";
+            alert(errorMsg);
             return;
         }
 
-
-        alert("[Success] Your message has been prepared: " + message);
+        const successPrefix = (window.i18n && typeof window.i18n.t === "function")
+            ? window.i18n.t("contact_alert_success")
+            : "[Success] Your message has been prepared: ";
+        alert(successPrefix + message);
         
         const email = "itachi@gmail.com";
-        const subject = "Multiplayer Connection";
+        const subject = (window.i18n && typeof window.i18n.t === "function")
+            ? window.i18n.t("contact_email_subject")
+            : "Multiplayer Connection";
         const body = message;
 
         window.location.href = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
@@ -66,116 +73,129 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-            const skillData = {
-                frontend: {
-                    title: "Front-End",
-                    icon: "fa-solid fa-code",
-                    skills: [
-                        { name: "HTML", level: "90%" },
-                        { name: "CSS", level: "60%" },
-                        { name: "Qt Designer", level: "85%" },
-                        { name: "PyQt", level: "60%" },
-                        { name: "Tkinter", level: "60%" }
-                    ]
-                },
-                backend: {
-                    title: "Back-End",
-                    icon: "fa-solid fa-server",
-                    skills: [
-                        { name: "Python", level: "82%" },
-                        { name: "Django", level: "60%" },
-                        { name: "MySQL", level: "85%" },
-                        {name: "PHP", level: "60%"},
-                        {name: "Laravel", level: "60%"},
-                        {name: "Node JS", level: "60%"},
-                    ]
-                },
-                tools: {
-                    title: "Tools",
-                    icon: "fa-solid fa-screwdriver-wrench",
-                    skills: [
-                        { name: "Postman", level: "90%" },
-                        { name: "VS Code", level: "85%" },
-                        { name: "PyCharm", level: "75%" },
-                        {name: "Docker", level: "70%"},
-                        {name: "Git", level: "65%"},
-                        {name: "Linux", level: "60%"},
-                        {name :"Vercel", level: "90%"},
-                        {name:"Railway", level: "85%"}                 
-                    ]
-                },
-                softskills: {
-                    title: "Programming & Others",
-                    icon: "fa-solid fa-user-group",
-                    skills: [
-                        { name: "C", level: "60%" },
-                        { name: "C++", level: "65%" },  
-                        { name: "Problem Solving", level: "85%" },
-                        { name: "Teamwork", level: "90%" },
-                        { name: "Leadership", level: "60%" }
-                    ]
-                }
-            };
-
-            const tabsContainer = document.getElementById('skills-tabs');
-            const contentContainer = document.getElementById('skills-content');
-
-            if (tabsContainer && contentContainer) {
-                function renderContent(categoryKey) {
-                    const data = skillData[categoryKey];
-                    
-                    // 1. Title
-                    contentContainer.innerHTML = `<h3 class="category-title"><i class="${data.icon}"></i> ${data.title}</h3>`;
-
-                    // 2. Bars
-                    data.skills.forEach(skill => {
-                        const barHTML = `
-                            <div class="skill-bar-wrapper">
-                                <div class="skill-info">
-                                    <span>${skill.name}</span>
-                                    <span>${skill.level}</span>
-                                </div>
-                                <div class="progress-line">
-                                    <span data-width="${skill.level}"></span>
-                                </div>
-                            </div>
-                        `;
-                        contentContainer.innerHTML += barHTML;
-                    });
-
-                    // 3. Animation
-                    setTimeout(() => {
-                        const bars = contentContainer.querySelectorAll('.progress-line span');
-                        bars.forEach(bar => {
-                            bar.style.width = bar.getAttribute('data-width');
-                        });
-                    }, 50);
-                }
-
-                let isFirst = true;
-                for (const key in skillData) {
-                    const data = skillData[key];
-                    const tabBtn = document.createElement('div');
-                    tabBtn.className = 'tab-card';
-                    if (isFirst) tabBtn.classList.add('active');
-
-                    tabBtn.innerHTML = `<i class="${data.icon}"></i> <span>${data.title}</span>`;
-
-                    tabBtn.addEventListener('click', () => {
-                        document.querySelectorAll('.tab-card').forEach(t => t.classList.remove('active'));
-                        tabBtn.classList.add('active');
-                        renderContent(key);
-                    });
-
-                    tabsContainer.appendChild(tabBtn);
-
-                    if (isFirst) {
-                        renderContent(key);
-                        isFirst = false;
-                    }
-                }
+    function getSkillData() {
+        const t = (k, fb) => (window.i18n && typeof window.i18n.t === "function") ? window.i18n.t(k) : fb;
+        return {
+            frontend: {
+                title: t("skill_cat_frontend", "Front-End"),
+                icon: "fa-solid fa-code",
+                skills: [
+                    { name: "HTML", level: "90%" },
+                    { name: "CSS", level: "60%" },
+                    { name: "Qt Designer", level: "85%" },
+                    { name: "PyQt", level: "60%" },
+                    { name: "Tkinter", level: "60%" }
+                ]
+            },
+            backend: {
+                title: t("skill_cat_backend", "Back-End"),
+                icon: "fa-solid fa-server",
+                skills: [
+                    { name: "Python", level: "82%" },
+                    { name: "Django", level: "60%" },
+                    { name: "MySQL", level: "85%" },
+                    { name: "PHP", level: "60%" },
+                    { name: "Laravel", level: "60%" },
+                    { name: "Node JS", level: "60%" }
+                ]
+            },
+            tools: {
+                title: t("skill_cat_tools", "Tools"),
+                icon: "fa-solid fa-screwdriver-wrench",
+                skills: [
+                    { name: "Postman", level: "90%" },
+                    { name: "VS Code", level: "85%" },
+                    { name: "PyCharm", level: "75%" },
+                    { name: "Docker", level: "70%" },
+                    { name: "Git", level: "65%" },
+                    { name: "Linux", level: "60%" },
+                    { name: "Vercel", level: "90%" },
+                    { name: "Railway", level: "85%" }
+                ]
+            },
+            softskills: {
+                title: t("skill_cat_softskills", "Programming & Others"),
+                icon: "fa-solid fa-user-group",
+                skills: [
+                    { name: "C", level: "60%" },
+                    { name: "C++", level: "65%" },
+                    { name: t("skill_problem_solving", "Problem Solving"), level: "85%" },
+                    { name: t("skill_teamwork", "Teamwork"), level: "90%" },
+                    { name: t("skill_leadership", "Leadership"), level: "60%" }
+                ]
             }
+        };
+    }
+
+    const tabsContainer = document.getElementById('skills-tabs');
+    const contentContainer = document.getElementById('skills-content');
+    let currentCategory = 'frontend';
+
+    if (tabsContainer && contentContainer) {
+        function renderContent(categoryKey) {
+            currentCategory = categoryKey;
+            const skillData = getSkillData();
+            const data = skillData[categoryKey];
+            if (!data) return;
+
+            // 1. Title
+            contentContainer.innerHTML = `<h3 class="category-title"><i class="${data.icon}" lang="en" translate="no"></i> ${data.title}</h3>`;
+
+            // 2. Bars
+            data.skills.forEach(skill => {
+                const barHTML = `
+                    <div class="skill-bar-wrapper">
+                        <div class="skill-info">
+                            <span>${skill.name}</span>
+                            <span>${skill.level}</span>
+                        </div>
+                        <div class="progress-line">
+                            <span data-width="${skill.level}"></span>
+                        </div>
+                    </div>
+                `;
+                contentContainer.innerHTML += barHTML;
+            });
+
+            // 3. Animation
+            setTimeout(() => {
+                const bars = contentContainer.querySelectorAll('.progress-line span');
+                bars.forEach(bar => {
+                    bar.style.width = bar.getAttribute('data-width');
+                });
+            }, 50);
+        }
+
+        function buildTabs() {
+            const skillData = getSkillData();
+            tabsContainer.innerHTML = '';
+            for (const key in skillData) {
+                const data = skillData[key];
+                const tabBtn = document.createElement('div');
+                tabBtn.className = 'tab-card';
+                if (key === currentCategory) tabBtn.classList.add('active');
+
+                tabBtn.innerHTML = `<i class="${data.icon}" lang="en" translate="no"></i> <span>${data.title}</span>`;
+
+                tabBtn.addEventListener('click', () => {
+                    document.querySelectorAll('.tab-card').forEach(t => t.classList.remove('active'));
+                    tabBtn.classList.add('active');
+                    renderContent(key);
+                });
+
+                tabsContainer.appendChild(tabBtn);
+            }
+            renderContent(currentCategory);
+        }
+
+        buildTabs();
+
+        // Re-render when language changes
+        window.addEventListener('languageChanged', () => {
+            buildTabs();
         });
+    }
+});
 
 // --- Theme Switcher Logic ---
 document.addEventListener("DOMContentLoaded", () => {

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="i18n-title-key" content="doc_title">
     <title>Mao Visal | Portfolio</title>
     <link rel="icon" type="image/png" href="/static/img/image.png">
     
@@ -12,10 +13,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Inter:wght@300;400;600&family=Kantumruy+Pro:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="/static/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="/static/i18n.js"></script>
     <script defer src="/static/style-js.js"></script>
 </head>
 <body>
@@ -38,16 +40,38 @@
 
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav text-center gap-4">
-                    <li class="nav-item"><a class="nav-link" href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#profile"><i class="fa-regular fa-user"></i> Profile</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects"><i class="fa-regular fa-folder"></i> Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#Skills"><i class="fa-regular fa-star"></i> Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#connect"><i class="fa-regular fa-envelope"></i> Connect</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#home"><i class="fa-solid fa-house" lang="en" translate="no"></i> <span data-i18n="nav_home">Home</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#profile"><i class="fa-regular fa-user" lang="en" translate="no"></i> <span data-i18n="nav_profile">Profile</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects"><i class="fa-regular fa-folder" lang="en" translate="no"></i> <span data-i18n="nav_projects">Projects</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#Skills"><i class="fa-regular fa-star" lang="en" translate="no"></i> <span data-i18n="nav_skills">Skills</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience"><i class="fa-solid fa-briefcase" lang="en" translate="no"></i> <span data-i18n="nav_experience">Experience</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#connect"><i class="fa-regular fa-envelope" lang="en" translate="no"></i> <span data-i18n="nav_connect">Connect</span></a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" id="theme-toggle" title="Toggle Theme">
-                            <i class="fa-solid fa-circle-half-stroke" id="theme-icon"></i> Theme
+                        <a class="nav-link" href="#" id="theme-toggle" title="Toggle Theme" data-i18n-title="nav_theme_title">
+                            <i class="fa-solid fa-circle-half-stroke" id="theme-icon" lang="en" translate="no"></i> <span data-i18n="nav_theme">Theme</span>
                         </a>
+                    </li>
+                    <li class="nav-item dropdown lang-dropdown-item">
+                        <a class="nav-link dropdown-toggle lang-dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Select Language" data-i18n-aria="nav_lang_aria">
+                            <span id="current-lang-flag">🇬🇧</span> <span id="current-lang-code">EN</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark pixel-dropdown-menu" aria-labelledby="languageDropdown">
+                            <li>
+                                <button class="dropdown-item lang-btn" type="button" data-lang="en">
+                                    <span class="lang-flag">🇬🇧</span> English <span class="lang-badge">EN</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item lang-btn" type="button" data-lang="km">
+                                    <span class="lang-flag">🇰🇭</span> ភាសាខ្មែរ <span class="lang-badge">KM</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item lang-btn" type="button" data-lang="ru">
+                                    <span class="lang-flag">🇷🇺</span> Русский <span class="lang-badge">RU</span>
+                                </button>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -64,15 +88,15 @@
             <div class="avatar mb-4" style="width: 150px; height: 150px; margin: 0 auto; border: 4px solid var(--accent-primary); border-radius: 50%; overflow: hidden; background: #000; box-shadow: 0 0 20px var(--accent-primary);">
                 <img src="/static/img/image copy 6.png" alt="Mao Visal Logo" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
             </div>
-            <h1 style="text-shadow: 4px 4px 0 var(--accent-primary); font-family: var(--font-pixel);">HELLO WORLD</h1>
-            <p style="font-size: 1.5rem; text-transform: uppercase;">Welcome to my server.</p>
+            <h1 style="text-shadow: 4px 4px 0 var(--accent-primary); font-family: var(--font-pixel);" data-i18n="hero_title">HELLO WORLD</h1>
+            <p style="font-size: 1.5rem; text-transform: uppercase;" data-i18n="hero_subtitle">Welcome to my server.</p>
         
             <div class="social-links">
-                <a href="https://twitter.com/itachi" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
-                <a href="https://www.instagram.com/itachi1920x1080?utm_source=qr" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                <a href="https://www.tiktok.com/@itachi1920x1080?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-                <a href="https://t.me/Lovealonesusususususususususu" target="_blank"><i class="fa-brands fa-telegram"></i> Telegram</a>
-                <a href="https://youtube.com/@itachi-m4c6i?si=w4vX7lRiDcbtYD7s" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a>
+                <a href="https://twitter.com/itachi" target="_blank"><i class="fa-brands fa-twitter" lang="en" translate="no"></i> <span data-i18n="social_twitter">Twitter</span></a>
+                <a href="https://www.instagram.com/itachi1920x1080?utm_source=qr" target="_blank"><i class="fa-brands fa-instagram" lang="en" translate="no"></i> <span data-i18n="social_instagram">Instagram</span></a>
+                <a href="https://www.tiktok.com/@itachi1920x1080?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fa-brands fa-tiktok" lang="en" translate="no"></i> <span data-i18n="social_tiktok">TikTok</span></a>
+                <a href="https://t.me/Lovealonesusususususususususu" target="_blank"><i class="fa-brands fa-telegram" lang="en" translate="no"></i> <span data-i18n="social_telegram">Telegram</span></a>
+                <a href="https://youtube.com/@itachi-m4c6i?si=w4vX7lRiDcbtYD7s" target="_blank"><i class="fa-brands fa-youtube" lang="en" translate="no"></i> <span data-i18n="social_youtube">YouTube</span></a>
             </div>
         </div>
     </header>
@@ -84,16 +108,16 @@
                 <img src="/static/img/MAOVISAL.png" alt="Mao Visal Logo">
             </div>
             
-            <h2>MAO VISAL</h2>
-            <h3>COMPUTER SCIENCE STUDENT</h3>
+            <h2 data-i18n="profile_name">MAO VISAL</h2>
+            <h3 data-i18n="profile_role">COMPUTER SCIENCE STUDENT</h3>
 
-            <p>
+            <p data-i18n-html="profile_bio">
                 Hi! I'm <strong>Mao Visal</strong>, a Computer Science student at RUPP and studying Computer Services at NTTI, specializing in Backend development and networking. I enjoy building secure, efficient systems using tools like Python, Laravel and etc. 
             </p>
 
             <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <a href="#projects" class="btn">View Inventory</a>
-                <a href="cv.html" class="btn" target="_blank">Download CV</a>
+                <a href="#projects" class="btn" data-i18n="btn_view_inventory">View Inventory</a>
+                <a href="cv.html" class="btn" target="_blank" data-i18n="btn_download_cv">Download CV</a>
             </div>
         </div>
     </section>
@@ -103,7 +127,7 @@
     <div id="dimension-nether" class="dimension">
     <section id="projects">
         <div class="container">
-            <h2 class="section-title">PROJECTS</h2>
+            <h2 class="section-title" data-i18n="projects_title">PROJECTS</h2>
             <div class="row g-4 justify-content-center">
                 
                 <div class="col-12 col-md-4">
@@ -111,9 +135,9 @@
                         <div class="card-img-placeholder">
                             <img src="/static/img/image copy 2.png" alt="Python Project">
                         </div>
-                        <h3>Python Project</h3>
-                        <p>A decentralized ledger built from scratch using Python.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_python_title">Python Project</h3>
+                        <p data-i18n="proj_python_desc">A decentralized ledger built from scratch using Python.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -124,9 +148,9 @@
                                 <iframe src="https://maovisal.vercel.app/" scrolling="no" tabindex="-1"></iframe>
                             </div>
                         </div>
-                        <h3>Web Development</h3>
-                        <p>A personal portfolio website showcasing my projects and skills.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_webdev_title">Web Development</h3>
+                        <p data-i18n="proj_webdev_desc">A personal portfolio website showcasing my projects and skills.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -135,9 +159,9 @@
                         <div class="card-img-placeholder">
                             <img src="/static/img/GameDeveloment.png" alt="Snake Game">
                         </div>
-                        <h3>Snake Game</h3>
-                        <p>A classic Snake Game built using Python.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_snake_title">Snake Game</h3>
+                        <p data-i18n="proj_snake_desc">A classic Snake Game built using Python.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
                 
@@ -146,9 +170,9 @@
                         <div class="card-img-placeholder">
                             <img src="/static/img/image copy.png" alt="Telegram Bot">
                         </div>
-                        <h3>Telegram Bot</h3>
-                        <p> Telegram bot.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_bot_title">Telegram Bot</h3>
+                        <p data-i18n="proj_bot_desc">Telegram bot projects.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -159,9 +183,9 @@
                                 <iframe src="https://media-downloader-hub-bot.vercel.app" scrolling="no" tabindex="-1"></iframe>
                             </div>
                         </div>
-                        <h3>Media Downloader Hub</h3>
-                        <p>A web interface for downloading media via my Telegram bot.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_mediahub_title">Media Downloader Hub</h3>
+                        <p data-i18n="proj_mediahub_desc">A web interface for downloading media via my Telegram bot.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -170,9 +194,9 @@
                         <div class="card-img-placeholder">
                             <img src="/static/img/FaceRecognition.png" alt="Face Recognition Project">
                         </div>
-                        <h3>Face Recognition System</h3>
-                        <p>ប្រព័ន្ធគ្រប់គ្រងសិស្ស ជាមួយនឹងការស្កេនមុខ (Student Management System)</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_facerec_title">Face Recognition System</h3>
+                        <p data-i18n="proj_facerec_desc">ប្រព័ន្ធគ្រប់គ្រងសិស្ស ជាមួយនឹងការស្កេនមុខ (Student Management System)</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -181,9 +205,9 @@
                         <div class="card-img-placeholder">
                             <img src="/static/img/image copy 5.png" alt="Calculator GUI">
                         </div>
-                        <h3>Calculator GUI</h3>
-                        <p>A graphical user interface calculator.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_calc_title">Calculator GUI</h3>
+                        <p data-i18n="proj_calc_desc">A graphical user interface calculator.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -192,9 +216,9 @@
                         <div class="card-img-placeholder">
                             <img src="/static/img/Tips dataset analysis.png" alt="Tips Dataset Analysis">
                         </div>
-                        <h3>Tips Dataset Analysis</h3>
-                        <p>Data analysis and visualization of the tips dataset.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_tips_title">Tips Dataset Analysis</h3>
+                        <p data-i18n="proj_tips_desc">Data analysis and visualization of the tips dataset.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -203,9 +227,9 @@
                         <div class="card-img-placeholder">
                             <img src="/static/img/pairplot.png" alt="Analyzing AI in Education">
                         </div>
-                        <h3>Analyzing AI in Education</h3>
-                        <p>Data analysis and visualization of AI perception in education.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_aiedu_title">Analyzing AI in Education</h3>
+                        <p data-i18n="proj_aiedu_desc">Data analysis and visualization of AI perception in education.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -216,9 +240,9 @@
                                 <iframe src="https://audio-wav.vercel.app/" scrolling="no" tabindex="-1"></iframe>
                             </div>
                         </div>
-                        <h3>AudioWAV</h3>
-                        <p>A web application for handling audio WAV files.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_audiowav_title">AudioWAV</h3>
+                        <p data-i18n="proj_audiowav_desc">A web application for handling audio WAV files.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -229,9 +253,9 @@
                                 <iframe src="https://qr-code-generator-chi-green.vercel.app/" scrolling="no" tabindex="-1"></iframe>
                             </div>
                         </div>
-                        <h3>QR Code Generator</h3>
-                        <p>A web application for generating custom QR codes.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_qrcode_title">QR Code Generator</h3>
+                        <p data-i18n="proj_qrcode_desc">A web application for generating custom QR codes.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -242,9 +266,9 @@
                                 <iframe src="https://naga-voice-ai.vercel.app/" scrolling="no" tabindex="-1"></iframe>
                             </div>
                         </div>
-                        <h3>Naga Voice AI</h3>
-                        <p>An AI voice application with interactive features.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_nagavoice_title">Naga Voice AI</h3>
+                        <p data-i18n="proj_nagavoice_desc">An AI voice application with interactive features.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -255,9 +279,9 @@
                                 <iframe src="https://o-auth-authntication.vercel.app/" scrolling="no" tabindex="-1"></iframe>
                             </div>
                         </div>
-                        <h3>OAuth Authentication</h3>
-                        <p>A web application demonstrating OAuth authentication flow.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_oauth_title">OAuth Authentication</h3>
+                        <p data-i18n="proj_oauth_desc">A web application demonstrating OAuth authentication flow.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -268,9 +292,9 @@
                                 <iframe src="https://attendance-dashboard-mu.vercel.app/" scrolling="no" tabindex="-1"></iframe>
                             </div>
                         </div>
-                        <h3>Attendance Dashboard</h3>
-                        <p>A web application for tracking and managing attendance.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_attendance_title">Attendance Dashboard</h3>
+                        <p data-i18n="proj_attendance_desc">A web application for tracking and managing attendance.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -281,9 +305,9 @@
                                 <iframe src="https://chat-bot-shop.vercel.app/" scrolling="no" tabindex="-1"></iframe>
                             </div>
                         </div>
-                        <h3>ChatBot Shop</h3>
-                        <p>An AI chatbot shop application.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_chatbot_title">ChatBot Shop</h3>
+                        <p data-i18n="proj_chatbot_desc">An AI chatbot shop application.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -294,9 +318,20 @@
                                 <iframe src="https://ecommerce-one-pi-27.vercel.app/" scrolling="no" tabindex="-1"></iframe>
                             </div>
                         </div>
-                        <h3>Ecommerce Year 3</h3>
-                        <p>My Year 3 Ecommerce project.</p>
-                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> View Details</div>
+                        <h3 data-i18n="proj_ecommerce_title">Ecommerce Year 3</h3>
+                        <p data-i18n="proj_ecommerce_desc">My Year 3 Ecommerce project.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div class="card nether-fortress" data-bs-toggle="modal" data-bs-target="#windowsServerModal" style="cursor: pointer;">
+                        <div class="card-img-placeholder">
+                            <img src="/static/img/windows_server_lab.jpg" alt="Windows Server & AWS Lab Series">
+                        </div>
+                        <h3 data-i18n="proj_winserver_title">Windows Server & AWS Lab</h3>
+                        <p data-i18n="proj_winserver_desc">Hands-on IT lab series covering Windows Server 2022 administration, Active Directory, GPO, and AWS Cloud integration.</p>
+                        <div class="mt-auto text-center" style="color: var(--mc-green-light); font-weight: bold; font-size: 1.2rem;"><i class="fas fa-search-plus"></i> <span data-i18n="btn_view_details">View Details</span></div>
                     </div>
                 </div>
 
@@ -308,7 +343,7 @@
 
     <div id="dimension-end" class="dimension">
     <section id="Skills">
-        <h2 class="section-title">Technical Skills</h2>
+        <h2 class="section-title" data-i18n="skills_section_title">Technical Skills</h2>
         <div class="skills-container">
             <div id="skills-tabs" class="skills-tabs"></div>
             <div id="skills-content" class="skills-content"></div>
@@ -317,14 +352,11 @@
 
     <section id="experience">
         <div class="container">
-            <h2 class="section-title text-center mb-3" style="color: #fce803;">My Journey</h2>
+            <h2 class="section-title text-center mb-3" style="color: #fce803;" data-i18n="journey_title">My Journey</h2>
 
             <div class="row justify-content-center mb-5">
                 <div class="col-md-8 text-center">
-                    <p style="color: #fff; font-size: 1.2rem; text-shadow: 2px 2px 0 #000;">
-                        No professional experience yet, but actively building projects, learning new skills,
-                        and eager for opportunities to work and grow.
-                    </p>
+                    <p style="color: #fff; font-size: 1.2rem; text-shadow: 2px 2px 0 #000;" data-i18n="journey_intro">No professional experience yet, but actively building projects, learning new skills, and eager for opportunities to work and grow.</p>
                 </div>
             </div>
 
@@ -332,8 +364,8 @@
                 <div class="col-lg-12 col-md-10">
                     <div class="timeline-wrapper ">
                         <div class="timeline-item">
-                            <span class="timeline-badge">Present</span>
-                            <h4 class="h5 fw-bold mt-2">Media Downloader Hub Bot</h4>
+                            <span class="timeline-badge" data-i18n="timeline_badge_present">Present</span>
+                            <h4 class="h5 fw-bold mt-2" data-i18n="timeline_hub_title">Media Downloader Hub Bot</h4>
                             <p class="text-style">
                                 Launched a dedicated web application for my Telegram media downloader bot.<br>
                                 <a href="https://media-downloader-hub-bot.vercel.app" target="_blank" class="pixel-link-btn">View Bot App</a>
@@ -343,47 +375,37 @@
                         </div>
                         <div class="timeline-item">
                             <span class="timeline-badge">2026</span>
-                            <h4 class="h5 fw-bold mt-2">National Technical Training Institute (NTTI)</h4>
-                            <p class="text-style">
-                                Study Computer Services.
-                            </p>
+                            <h4 class="h5 fw-bold mt-2" data-i18n="timeline_ntti_title">National Technical Training Institute (NTTI)</h4>
+                            <p class="text-style" data-i18n="timeline_ntti_desc">Study Computer Services.</p>
                         </div>
                         <div class="timeline-item">
                             <span class="timeline-badge">2026</span>
-                            <h4 class="h5 fw-bold mt-2">PHP, Laravel & React.js</h4>
-                            <p class="text-style">
-                                Study PHP, Laravel, and React.js to build scalable, modern full-stack web applications.
-                            </p>
+                            <h4 class="h5 fw-bold mt-2" data-i18n="timeline_php_title">PHP, Laravel & React.js</h4>
+                            <p class="text-style" data-i18n="timeline_php_desc">Study PHP, Laravel, and React.js to build scalable, modern full-stack web applications.</p>
                         </div>
                         <div class="timeline-item">
                             <span class="timeline-badge">2025</span>
-                            <h4 class="h5 fw-bold mt-2">School Attendance System</h4>
+                            <h4 class="h5 fw-bold mt-2" data-i18n="timeline_attendance_title">School Attendance System</h4>
                             <p class="text-style">
                                 <a href="https://school-attendance-system-kappa.vercel.app/" target="_blank" class="pixel-link-btn">Attendance</a>
                             </p>
                         </div>
                         <div class="timeline-item">
                             <span class="timeline-badge">2024</span>
-                            <h4 class="h5 fw-bold mt-2">Started Web Development</h4>
-                            <p class="text-style">
-                                Began learning the fundamentals of HTML, CSS, and Bootstrap to build responsive user interfaces.
-                            </p>
+                            <h4 class="h5 fw-bold mt-2" data-i18n="timeline_webdev_title">Started Web Development</h4>
+                            <p class="text-style" data-i18n="timeline_webdev_desc">Began learning the fundamentals of HTML, CSS, and Bootstrap to build responsive user interfaces.</p>
                         </div>
 
                         <div class="timeline-item">
                             <span class="timeline-badge">2024</span>
-                            <h4 class="h5 fw-bold mt-2">Deepening Python Knowledge</h4>
-                            <p>
-                                Mastered automation scripts and GUI development using libraries like Selenium and Tkinter.
-                            </p>
+                            <h4 class="h5 fw-bold mt-2" data-i18n="timeline_python_title">Deepening Python Knowledge</h4>
+                            <p data-i18n="timeline_python_desc">Mastered automation scripts and GUI development using libraries like Selenium and Tkinter.</p>
                         </div>
 
                         <div class="timeline-item">
                             <span class="timeline-badge ">2023</span>
-                            <h4 class="h5 fw-bold mt-2">Building Full-Stack Projects</h4>
-                            <p class="text-style">
-                                Developing a comprehensive management system using Python (Flask) and SQL. Focusing on backend logic and database architecture.
-                            </p>
+                            <h4 class="h5 fw-bold mt-2" data-i18n="timeline_fullstack_title">Building Full-Stack Projects</h4>
+                            <p class="text-style" data-i18n="timeline_fullstack_desc">Developing a comprehensive management system using Python (Flask) and SQL. Focusing on backend logic and database architecture.</p>
                         </div>
                     </div>
                 </div>
@@ -394,7 +416,7 @@
     <section id="connect" class="py-5" >
         <div class="end-portal-frame mx-auto mb-5">
             <div class="end-portal-void">
-                <h2 class="section-title" style="color: #e3dfa8; text-shadow: 2px 2px 0 #000; margin-bottom: 0;">MULTIPLAYER</h2>
+                <h2 class="section-title" style="color: #e3dfa8; text-shadow: 2px 2px 0 #000; margin-bottom: 0;" data-i18n="connect_title">MULTIPLAYER</h2>
             </div>
         </div>
         <div class="container text-center" style="position: relative; z-index: 5; background: rgba(0,0,0,0.6); padding: 30px; border: 4px solid #fff;">
@@ -402,29 +424,29 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-md-10 col-lg-6">
                     <div class="input-group">
-                        <input type="text" class="form-control pixel-input" placeholder="Type a message..." aria-label="Message">
-                        <button class="btn pixel-btn-submit" type="button">Send</button>
+                        <input type="text" class="form-control pixel-input" placeholder="Type a message..." aria-label="Message" data-i18n-placeholder="connect_placeholder">
+                        <button class="btn pixel-btn-submit" type="button" data-i18n="btn_send">Send</button>
                     </div>
                 </div>
             </div>
                         
             <div class="social-links">
                 <a href="https://github.com/itachi1920x1080" class="pixel-btn-social gh" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
+                    <i class="fab fa-github" lang="en" translate="no"></i> GitHub
                 </a>
                 <a href="https://www.linkedin.com/in/mao-visal-22586536a/" class="pixel-btn-social li" target="_blank">
-                    <i class="fab fa-linkedin"></i> LinkedIn
+                    <i class="fab fa-linkedin" lang="en" translate="no"></i> LinkedIn
                 </a>
                 <a href="mailto:itachi@gmail.com" class="pixel-btn-social em">
-                    <i class="fas fa-envelope"></i> Email
+                    <i class="fas fa-envelope" lang="en" translate="no"></i> Email
                 </a>
                 <a href="https://youtube.com/@itachi-m4c6i?si=w4vX7lRiDcbtYD7s" class="pixel-btn-social yt" target="_blank">
-                    <i class="fab fa-youtube"></i> YouTube
+                    <i class="fab fa-youtube" lang="en" translate="no"></i> YouTube
                 </a>
             </div>
 
             <footer>
-                <p>&copy; 2025 Mao Visal. Crafted with HTML & CSS.</p>
+                <p data-i18n-html="footer_copy">&copy; 2025 Mao Visal. Crafted with HTML & CSS.</p>
             </footer>
         </div>
     </section>
@@ -434,17 +456,17 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Python Project</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_python_title">Python Project</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body text-center">
             <img src="/static/img/image copy 2.png" alt="Python Project" class="img-fluid mb-3 border border-info" style="max-height: 60vh;">
-            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">A decentralized ledger built from scratch using Python.</p>
+            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_python_modal_desc">A decentralized ledger built from scratch using Python.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://github.com/itachi1920x1080" target="_blank" class="btn m-1">Source Code</a>
-            <a href="https://github.com/itachi1920x1080/learning-Python.git" target="_blank" class="btn m-1">Learning Python</a>
-            <a href="https://github.com/itachi1920x1080/Diagram_py.git" target="_blank" class="btn m-1">Diagram Py</a>
+            <a href="https://github.com/itachi1920x1080" target="_blank" class="btn m-1" data-i18n="btn_source_code">Source Code</a>
+            <a href="https://github.com/itachi1920x1080/learning-Python.git" target="_blank" class="btn m-1" data-i18n="btn_learning_python">Learning Python</a>
+            <a href="https://github.com/itachi1920x1080/Diagram_py.git" target="_blank" class="btn m-1" data-i18n="btn_diagram_py">Diagram Py</a>
             </div>
         </div>
         </div>
@@ -454,18 +476,18 @@
         <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Web Development</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_webdev_title">Web Development</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body">
             <div class="ratio ratio-16x9 mb-3 border border-info">
                 <iframe src="https://maovisal.vercel.app/" title="Personal Portfolio Project" allowfullscreen></iframe>
             </div>
-            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">A personal portfolio website showcasing my projects and skills.</p>
+            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_webdev_modal_desc">A personal portfolio website showcasing my projects and skills.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://maovisal.vercel.app/" target="_blank" class="btn m-1">Live Demo</a>
-            <a href="https://github.com/itachi1920x1080/Static-Personal-Portfolio" target="_blank" class="btn m-1">Source Code</a>
+            <a href="https://maovisal.vercel.app/" target="_blank" class="btn m-1" data-i18n="btn_live_demo">Live Demo</a>
+            <a href="https://github.com/itachi1920x1080/Static-Personal-Portfolio" target="_blank" class="btn m-1" data-i18n="btn_source_code">Source Code</a>
             </div>
         </div>
         </div>
@@ -475,15 +497,15 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Snake Game</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_snake_title">Snake Game</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body text-center">
             <img src="/static/img/GameDeveloment.png" alt="Snake Game" class="img-fluid mb-3 border border-info" style="max-height: 60vh;">
-            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">A classic Snake Game built using Python.</p>
+            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_snake_modal_desc">A classic Snake Game built using Python.</p>
             </div>
             <div class="modal-footer justify-content-center" style="border-top: 2px solid #5dade2;">
-            <a href="https://github.com/itachi1920x1080/SnakeGame.git" target="_blank" class="btn">Source Code</a>
+            <a href="https://github.com/itachi1920x1080/SnakeGame.git" target="_blank" class="btn" data-i18n="btn_source_code">Source Code</a>
             </div>
         </div>
         </div>
@@ -493,12 +515,12 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Telegram Bot</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_bot_title">Telegram Bot</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body text-center">
             <img src="/static/img/image copy.png" alt="Telegram Bot" class="img-fluid mb-3 border border-info" style="max-height: 60vh;">
-            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">Telegram bot projects.</p>
+            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_bot_modal_desc">Telegram bot projects.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
             <a href="https://t.me/my_media_hub_bot" target="_blank" class="btn m-1">MediaDownloaderHub_Bot</a>
@@ -514,17 +536,17 @@
         <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Media Downloader Hub</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_mediahub_title">Media Downloader Hub</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body">
             <div class="ratio ratio-16x9 mb-3 border border-info">
                 <iframe src="https://media-downloader-hub-bot.vercel.app" title="Media Downloader Hub" allowfullscreen></iframe>
             </div>
-            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">A dedicated web interface for downloading media via my Telegram bot.</p>
+            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_mediahub_modal_desc">A dedicated web interface for downloading media via my Telegram bot.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://media-downloader-hub-bot.vercel.app" target="_blank" class="btn m-1">Live Web App</a>
+            <a href="https://media-downloader-hub-bot.vercel.app" target="_blank" class="btn m-1" data-i18n="btn_live_web_app">Live Web App</a>
             <a href="https://t.me/my_media_hub_bot" target="_blank" class="btn m-1">Telegram Bot</a>
             </div>
         </div>
@@ -535,15 +557,15 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Face Recognition System</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_facerec_title">Face Recognition System</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body text-center">
             <img src="/static/img/FaceRecognition.png" alt="Face Recognition Project" class="img-fluid mb-3 border border-info" style="max-height: 60vh;">
-            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">ប្រព័ន្ធគ្រប់គ្រងសិស្ស ជាមួយនឹងការស្កេនមុខ (STUDENT MANAGEMENT SYSTEM WITH FACE RECOGNITION)</p>
+            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_facerec_modal_desc">ប្រព័ន្ធគ្រប់គ្រងសិស្ស ជាមួយនឹងការស្កេនមុខ (STUDENT MANAGEMENT SYSTEM WITH FACE RECOGNITION)</p>
             </div>
             <div class="modal-footer justify-content-center" style="border-top: 2px solid #5dade2;">
-            <a href="https://github.com/itachi1920x1080/Face_Recognition_School_Management.git" target="_blank" class="btn">Source Code</a>
+            <a href="https://github.com/itachi1920x1080/Face_Recognition_School_Management.git" target="_blank" class="btn" data-i18n="btn_source_code">Source Code</a>
             </div>
         </div>
         </div>
@@ -553,15 +575,15 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Calculator GUI</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_calc_title">Calculator GUI</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body text-center">
             <img src="/static/img/image copy 5.png" alt="Calculator GUI" class="img-fluid mb-3 border border-info" style="max-height: 60vh;">
-            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">A graphical user interface calculator project.</p>
+            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_calc_modal_desc">A graphical user interface calculator project.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://github.com/itachi1920x1080/Calculator-GUI.git" target="_blank" class="btn m-1">Source Code</a>
+            <a href="https://github.com/itachi1920x1080/Calculator-GUI.git" target="_blank" class="btn m-1" data-i18n="btn_source_code">Source Code</a>
             </div>
         </div>
         </div>
@@ -571,15 +593,15 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Tips Dataset Analysis</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_tips_title">Tips Dataset Analysis</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body text-center">
             <img src="/static/img/Tips dataset analysis1.png" alt="Tips Dataset Analysis" class="img-fluid mb-3 border border-info" style="max-height: 60vh;">
-            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">Data analysis and visualization of the tips dataset using Python.</p>
+            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_tips_modal_desc">Data analysis and visualization of the tips dataset using Python.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://github.com/itachi1920x1080/tips-dataset-analysis.git" target="_blank" class="btn m-1">Source Code</a>
+            <a href="https://github.com/itachi1920x1080/tips-dataset-analysis.git" target="_blank" class="btn m-1" data-i18n="btn_source_code">Source Code</a>
             </div>
         </div>
         </div>
@@ -589,8 +611,8 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Analyzing AI in Education</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_aiedu_title">Analyzing AI in Education</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body text-center">
             <div id="aiEducationCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -604,17 +626,17 @@
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#aiEducationCarousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: #fff; border-radius: 50%;"></span>
-                <span class="visually-hidden">Previous</span>
+                <span class="visually-hidden" data-i18n="btn_prev">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#aiEducationCarousel" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: #fff; border-radius: 50%;"></span>
-                <span class="visually-hidden">Next</span>
+                <span class="visually-hidden" data-i18n="btn_next">Next</span>
                 </button>
             </div>
-            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">Data analysis and visualization of AI perception in education using Python.</p>
+            <p style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_aiedu_modal_desc">Data analysis and visualization of AI perception in education using Python.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://github.com/itachi1920x1080/analyzing-ai-in-education.git" target="_blank" class="btn m-1">Source Code</a>
+            <a href="https://github.com/itachi1920x1080/analyzing-ai-in-education.git" target="_blank" class="btn m-1" data-i18n="btn_source_code">Source Code</a>
             </div>
         </div>
         </div>
@@ -624,18 +646,18 @@
         <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">AudioWAV</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_audiowav_title">AudioWAV</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body">
             <div class="ratio ratio-16x9 mb-3 border border-info">
                 <iframe src="https://audio-wav.vercel.app/" title="AudioWAV Project" allowfullscreen></iframe>
             </div>
-            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">A web application for handling audio WAV files.</p>
+            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_audiowav_modal_desc">A web application for handling audio WAV files.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://audio-wav.vercel.app/" target="_blank" class="btn m-1">Live Web App</a>
-            <a href="https://github.com/itachi1920x1080/AudioWAV.git" target="_blank" class="btn m-1">Source Code</a>
+            <a href="https://audio-wav.vercel.app/" target="_blank" class="btn m-1" data-i18n="btn_live_web_app">Live Web App</a>
+            <a href="https://github.com/itachi1920x1080/AudioWAV.git" target="_blank" class="btn m-1" data-i18n="btn_source_code">Source Code</a>
             </div>
         </div>
         </div>
@@ -645,17 +667,17 @@
         <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">QR Code Generator</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_qrcode_title">QR Code Generator</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body">
             <div class="ratio ratio-16x9 mb-3 border border-info">
                 <iframe src="https://qr-code-generator-chi-green.vercel.app/" title="QR Code Generator Project" allowfullscreen></iframe>
             </div>
-            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">A web application for generating custom QR codes.</p>
+            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_qrcode_modal_desc">A web application for generating custom QR codes.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://qr-code-generator-chi-green.vercel.app/" target="_blank" class="btn m-1">Live Web App</a>
+            <a href="https://qr-code-generator-chi-green.vercel.app/" target="_blank" class="btn m-1" data-i18n="btn_live_web_app">Live Web App</a>
             </div>
         </div>
         </div>
@@ -665,17 +687,17 @@
         <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Naga Voice AI</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_nagavoice_title">Naga Voice AI</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body">
             <div class="ratio ratio-16x9 mb-3 border border-info">
                 <iframe src="https://naga-voice-ai.vercel.app/" title="Naga Voice AI Project" allowfullscreen></iframe>
             </div>
-            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">An AI voice application with interactive features.</p>
+            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_nagavoice_modal_desc">An AI voice application with interactive features.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://naga-voice-ai.vercel.app/" target="_blank" class="btn m-1">Live Web App</a>
+            <a href="https://naga-voice-ai.vercel.app/" target="_blank" class="btn m-1" data-i18n="btn_live_web_app">Live Web App</a>
             </div>
         </div>
         </div>
@@ -685,17 +707,17 @@
         <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">OAuth Authentication</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_oauth_title">OAuth Authentication</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body">
             <div class="ratio ratio-16x9 mb-3 border border-info">
                 <iframe src="https://o-auth-authntication.vercel.app/" title="OAuth Authentication Project" allowfullscreen></iframe>
             </div>
-            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">A web application demonstrating OAuth authentication flow.</p>
+            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_oauth_modal_desc">A web application demonstrating OAuth authentication flow.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://o-auth-authntication.vercel.app/" target="_blank" class="btn m-1">Live Web App</a>
+            <a href="https://o-auth-authntication.vercel.app/" target="_blank" class="btn m-1" data-i18n="btn_live_web_app">Live Web App</a>
             </div>
         </div>
         </div>
@@ -705,17 +727,17 @@
         <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Attendance Dashboard</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_attendance_title">Attendance Dashboard</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body">
             <div class="ratio ratio-16x9 mb-3 border border-info">
                 <iframe src="https://attendance-dashboard-mu.vercel.app/" title="Attendance Dashboard Project" allowfullscreen></iframe>
             </div>
-            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">A web application for tracking and managing attendance.</p>
+            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_attendance_modal_desc">A web application for tracking and managing attendance.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://attendance-dashboard-mu.vercel.app/" target="_blank" class="btn m-1">Live Web App</a>
+            <a href="https://attendance-dashboard-mu.vercel.app/" target="_blank" class="btn m-1" data-i18n="btn_live_web_app">Live Web App</a>
             </div>
         </div>
         </div>
@@ -725,17 +747,17 @@
         <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">ChatBot Shop</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_chatbot_title">ChatBot Shop</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body">
             <div class="ratio ratio-16x9 mb-3 border border-info">
                 <iframe src="https://chat-bot-shop.vercel.app/" title="ChatBot Shop Project" allowfullscreen></iframe>
             </div>
-            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">An AI chatbot shop application.</p>
+            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_chatbot_modal_desc">An AI chatbot shop application.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://chat-bot-shop.vercel.app/" target="_blank" class="btn m-1">Live Web App</a>
+            <a href="https://chat-bot-shop.vercel.app/" target="_blank" class="btn m-1" data-i18n="btn_live_web_app">Live Web App</a>
             </div>
         </div>
         </div>
@@ -745,18 +767,39 @@
         <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
             <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
-            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;">Ecommerce Year 3</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_ecommerce_title">Ecommerce Year 3</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
             </div>
             <div class="modal-body">
             <div class="ratio ratio-16x9 mb-3 border border-info">
                 <iframe src="https://ecommerce-one-pi-27.vercel.app/" title="Ecommerce Year 3 Project" allowfullscreen></iframe>
             </div>
-            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;">My Year 3 Ecommerce project.</p>
+            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_ecommerce_modal_desc">My Year 3 Ecommerce project.</p>
             </div>
             <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
-            <a href="https://ecommerce-one-pi-27.vercel.app/" target="_blank" class="btn m-1">Live Web App</a>
-            <a href="https://github.com/itachi1920x1080/Ecommerce.git" target="_blank" class="btn m-1">Source Code</a>
+            <a href="https://ecommerce-one-pi-27.vercel.app/" target="_blank" class="btn m-1" data-i18n="btn_live_web_app">Live Web App</a>
+            <a href="https://github.com/itachi1920x1080/Ecommerce.git" target="_blank" class="btn m-1" data-i18n="btn_source_code">Source Code</a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="windowsServerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content text-light" style="background-color: #111424; border: 4px solid #5dade2; border-radius: 0; box-shadow: 0 0 20px rgba(93, 173, 226, 0.4);">
+            <div class="modal-header" style="border-bottom: 2px solid #5dade2;">
+            <h5 class="modal-title" style="font-family: var(--font-pixel); font-size: 2rem; color: #fff;" data-i18n="proj_winserver_title">Windows Server & AWS Lab</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria="btn_close"></button>
+            </div>
+            <div class="modal-body">
+            <div class="ratio ratio-16x9 mb-3 border border-info">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLbOPu6MFbjtY" title="Windows Server & AWS Lab Series" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p class="text-center" style="font-family: var(--font-pixel); font-size: 1.2rem; color: #fff;" data-i18n="proj_winserver_modal_desc">A hands-on video tutorial series on Windows Server 2022 administration and AWS cloud integration.</p>
+            </div>
+            <div class="modal-footer justify-content-center flex-wrap" style="border-top: 2px solid #5dade2;">
+            <a href="https://www.youtube.com/playlist?list=PLbOPu6MFbjtY" target="_blank" class="btn m-1"><i class="fa-brands fa-youtube" lang="en" translate="no"></i> <span data-i18n="btn_watch_playlist">Watch Playlist</span></a>
+            <a href="https://youtube.com/@itachi-m4c6i?si=w4vX7lRiDcbtYD7s" target="_blank" class="btn m-1"><i class="fa-brands fa-youtube" lang="en" translate="no"></i> <span data-i18n="btn_youtube_channel">YouTube Channel</span></a>
             </div>
         </div>
         </div>
