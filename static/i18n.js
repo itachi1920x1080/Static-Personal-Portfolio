@@ -188,7 +188,7 @@
             cv_lbl_dob: "Date of Birth:",
             cv_val_dob: "18 February 2006",
             cv_lbl_pob: "Place of Birth:",
-            cv_val_pob: "#469B, Street Lum, Phum Lor Kambor, Sangkat Svay Park, Khan Russey Keo, Phnom Penh",
+            cv_val_pob: "Lorkambor Village, Svay Pak Sangkat, Russey Keo District, Phnom Penh, Cambodia.",
 
             cv_sec_summary: "Professional Summary",
             cv_summary_text: "Motivated Computer Science student currently pursuing a 4-year Bachelor's degree at the Royal University of Phnom Penh (RUPP), with strong knowledge of software engineering, backend development, and cybersecurity fundamentals. Experienced in building real-world applications using Python, Flask, FastAPI, PHP, Laravel, REST APIs, MySQL, SQLite, HTML, CSS, and JavaScript. Skilled at developing full-stack web applications, desktop software, automation tools, Telegram bots, and AI-assisted solutions while following secure software development practices. Familiar with Git, GitHub, Linux, networking concepts, authentication systems, and API integration. Passionate about solving complex technical problems, collaborating within teams, and continuously learning modern technologies to build scalable, secure, and high-performance applications.",
@@ -459,7 +459,7 @@
             cv_lbl_dob: "ថ្ងៃខែឆ្នាំកំណើត៖",
             cv_val_dob: "១៨ កុម្ភៈ ២០០៦",
             cv_lbl_pob: "ទីកន្លែងកំណើត៖",
-            cv_val_pob: "#469B ផ្លូវលំ ភូមិឡកំបោរ សង្កាត់ស្វាយប៉ាក ខណ្ឌឫស្សីកែវ រាជធានីភ្នំពេញ",
+            cv_val_pob: "ភូមិឡកំបោរ សង្កាត់ស្វាយប៉ាក ខណ្ឌឫស្សីកែវ រាជធានីភ្នំពេញ ប្រទេសកម្ពុជា",
 
             cv_sec_summary: "សេចក្តីសង្ខេបវិជ្ជាជីវៈ",
             cv_summary_text: "និស្សិតវិទ្យាសាស្ត្រកុំព្យូទ័រប្រកបដោយឆន្ទៈ និងការប្តេជ្ញាចិត្តខ្ពស់ កំពុងសិក្សាថ្នាក់បរិញ្ញាបត្ររយៈពេល ៤ ឆ្នាំនៅសាកលវិទ្យាល័យភូមិន្ទភ្នំពេញ (RUPP) ជាមួយចំណេះដឹងរឹងមាំលើវិស្វកម្មកម្មវិធី ការអភិវឌ្ឍ Backend និងមូលដ្ឋានគ្រឹះសន្តិសុខសាយប័រ។ មានបទពិសោធន៍ក្នុងការកសាងកម្មវិធីជាក់ស្តែងដោយប្រើ Python, Flask, FastAPI, PHP, Laravel, REST APIs, MySQL, SQLite, HTML, CSS និង JavaScript។ មានជំនាញក្នុងការបង្កើតកម្មវិធី Full-Stack, កម្មវិធីលើ Desktop, ឧបករណ៍ស្វ័យប្រវត្តិកម្ម, Telegram Bots និងដំណោះស្រាយជំនួយដោយ AI ស្របតាមគោលការណ៍សុវត្ថិភាព។ ស្ទាត់ជំនាញជាមួយ Git, GitHub, Linux, បណ្តាញកុំព្យូទ័រ, ប្រព័ន្ធផ្ទៀងផ្ទាត់ និងការតភ្ជាប់ API។ ស្រឡាញ់ការដោះស្រាយបញ្ហាបច្ចេកទេសស្មុគស្មាញ ការសហការជាក្រុម និងការរៀនសូត្របច្ចេកវិទ្យាថ្មីៗឥតឈប់ឈរ ដើម្បីបង្កើតកម្មវិធីដែលអាចពង្រីកបាន មានសុវត្ថិភាព និងប្រសិទ្ធភាពខ្ពស់។",
@@ -737,7 +737,7 @@
             cv_lbl_dob: "Дата рождения:",
             cv_val_dob: "18 февраля 2006",
             cv_lbl_pob: "Место рождения:",
-            cv_val_pob: "#469B, Street Lum, Phum Lor Kambor, Sangkat Svay Park, Khan Russey Keo, Phnom Penh",
+            cv_val_pob: "Деревня Лоркамбор, коммуна Свай Пак, район Руссей Кео, Пномпень, Камбоджа",
 
             cv_sec_summary: "Профессиональный профиль",
             cv_summary_text: "Целеустремленный студент факультета компьютерных наук, обучающийся на 4-летней программе бакалавриата в Королевском университете Пномпеня (RUPP). Обладаю глубокими знаниями программной инженерии, бэкенд-разработки и основ кибербезопасности. Имею практический опыт создания приложений на Python, Flask, FastAPI, PHP, Laravel, REST API, MySQL, SQLite, HTML, CSS и JavaScript. Специализируюсь на создании full-stack веб-приложений, десктопного ПО, инструментов автоматизации, Telegram-ботов и решений с ИИ с соблюдением стандартов безопасной разработки. Уверенно работаю с Git, GitHub, Linux, основами компьютерных сетей, системами аутентификации и интеграцией API. Стремлюсь решать сложные технические задачи, работать в команде и постоянно осваивать современные технологии для построения масштабируемых, защищенных и высокопроизводительных решений.",
